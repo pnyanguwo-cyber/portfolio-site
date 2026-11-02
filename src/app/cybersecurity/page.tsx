@@ -1,53 +1,11 @@
-"use client";
-
 import React from "react";
 import { Navigation } from "@/components/navigation";
-import { ProjectCard } from "@/components/project-card";
-import { ShieldCheck, Lock, AlertTriangle, KeyRound, Terminal } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { TechStackBadge } from "@/components/tech-stack-badge";
+import { GithubIcon } from "@/components/icons";
+import Link from "next/link";
 
-const projects = [
-  {
-    title: "Security Knowledge Base & Defense-in-Depth",
-    description:
-      "A curated library of security methodologies, threat models, and secure coding patterns developed through my work with multi-agent AI systems and secure application development. Includes STRIDE analysis, OWASP Top 10 patterns, and prompt injection defenses.",
-    githubUrl: "https://github.com/pnyanguwo-cyber/ai-coding-agent-harness",
-    role: "Security Knowledge Architect",
-    stack: ["OWASP Top 10", "STRIDE", "Secure Coding", "Threat Modeling", "Prompt Defense"],
-    slug: "security-knowledge",
-  },
-  {
-    title: "WA Directory Zero-Trust Security Model",
-    description:
-      "Comprehensive security architecture for WhatsApp-based directory platform, featuring HMAC SHA-256 payload authentication, Supabase Row-Level Security (RLS), input schema sanitization, and automated rate limiting.",
-    githubUrl: "https://github.com/pnyanguwo-cyber/wa.directory",
-    role: "Security Architect",
-    stack: ["Next.js Security", "Supabase RLS", "HMAC SHA-256", "WhatsApp API Security"],
-    slug: "wa-security",
-  },
-];
-
-const securityConcepts = [
-  {
-    icon: AlertTriangle,
-    title: "STRIDE Threat Modeling",
-    description: "Systematic analysis of spoofing, tampering, repudiation, information disclosure, denial of service, and elevation of privilege.",
-  },
-  {
-    icon: Lock,
-    title: "Authentication & Authorization",
-    description: "HMAC token verification, cryptographic signature matching, and least-privilege role-based access controls.",
-  },
-  {
-    icon: KeyRound,
-    title: "Zero-Trust Data Protection",
-    description: "Strict Supabase Row-Level Security (RLS), encrypted credential vaults, and perimeter boundary checks.",
-  },
-  {
-    icon: Terminal,
-    title: "Secure AI Integration",
-    description: "Guardrails against prompt injection, jailbreaks, and untrusted token reflections in conversational flows.",
-  },
-];
+const stack = ["Next.js", "Supabase RLS", "HMAC SHA-256", "WhatsApp Cloud API", "TypeScript", "Node.js"];
 
 export default function CybersecurityPage() {
   return (
@@ -55,57 +13,95 @@ export default function CybersecurityPage() {
       <Navigation />
 
       <main className="flex-1 py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-600 text-indigo-400 border border-indigo-500/20 mb-4 backdrop-blur-md">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>DEFENSE-IN-DEPTH ENCLAVE</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 text-zinc-50 tracking-tight mb-6 flex items-center justify-center gap-3">
+        <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+          <header className="mb-12">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 transition-colors mb-6"
+            >
+              &larr; Home
+            </Link>
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4">
               Cybersecurity & Secure Systems
             </h1>
-            <p className="text-base sm:text-lg text-zinc-600 text-zinc-300 max-w-2xl mx-auto">
-              A security-first methodology applied across system architectures, from cryptographic API handshakes to hardened multi-agent LLM runtime defenses.
+            <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+              A security-first methodology applied across system architectures — from cryptographic
+              API handshakes to hardened multi-agent LLM runtime defenses.
             </p>
-          </div>
+          </header>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-
-          {/* Security Concepts Grid */}
-          <div className="max-w-4xl mx-auto rounded-2xl p-8 bg-white/70 bg-zinc-900/60 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl shadow-xl">
-            <h2 className="text-2xl font-bold text-zinc-900 text-zinc-100 mb-6">
-              Security Knowledge & Core Competencies
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {securityConcepts.map((concept) => {
-                const Icon = concept.icon;
-                return (
-                  <div
-                    key={concept.title}
-                    className="p-5 rounded-xl bg-zinc-100/70 bg-zinc-950/70 border border-zinc-200/80 border-zinc-800/80 hover:border-cyan-500/40 transition-colors"
-                  >
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-500">
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <h3 className="font-semibold text-zinc-900 text-zinc-100 text-sm">
-                        {concept.title}
-                      </h3>
-                    </div>
-                    <p className="text-xs text-zinc-600 text-zinc-400 leading-relaxed">
-                      {concept.description}
-                    </p>
-                  </div>
-                );
-              })}
+          <section className="mb-16">
+            <h2 className="text-lg font-semibold text-zinc-900 mb-4">WA Directory Zero-Trust Security Model</h2>
+            <p className="text-zinc-600 mb-6 leading-relaxed">
+              Comprehensive security architecture for the WhatsApp-based directory platform:
+            </p>
+            <ul className="space-y-3 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4 mb-6">
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>HMAC-SHA256</strong> signature verification on all inbound Meta webhook payloads
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Supabase Row-Level Security (RLS)</strong> enforcing tenant isolation at the database layer
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Multi-lingual prompt sanitization</strong> against adversarial LLM injection in English and Shona
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Magic-byte validation & malware scanning</strong> for business logo uploads
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Fail-closed configuration</strong> with automated credential rotation
+              </li>
+            </ul>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {stack.map((tech) => (
+                <TechStackBadge key={tech} name={tech} />
+              ))}
             </div>
-          </div>
+            <Link href="https://github.com/pnyanguwo-cyber/wa.directory" target="_blank" rel="noopener noreferrer">
+              <Button asChild size="sm" variant="outline">
+                <a href="https://github.com/pnyanguwo-cyber/wa.directory" target="_blank" rel="noopener noreferrer">
+                  <GithubIcon className="h-3.5 w-3.5 mr-1" />
+                  View Security Implementation
+                </a>
+              </Button>
+            </Link>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold text-zinc-900 mb-4">Security Knowledge & Competencies</h2>
+            <ul className="space-y-3 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>STRIDE Threat Modeling</strong> — systematic analysis of spoofing, tampering, repudiation, information disclosure, DoS, and elevation of privilege
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Authentication & Authorization</strong> — HMAC token verification, cryptographic signature matching, least-privilege RBAC
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Zero-Trust Data Protection</strong> — Supabase RLS, encrypted credential vaults, perimeter boundary checks
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Secure AI Integration</strong> — guardrails against prompt injection, jailbreaks, untrusted token reflection
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>OWASP Top 10</strong> — applied mitigations across production APIs and conversational interfaces
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
+
+      <footer className="py-10 border-t border-zinc-200">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+          <p>Panashe Nyanguwo &copy; 2026</p>
+          <div className="flex items-center gap-6">
+            <a href="/projects" className="hover:text-zinc-900 transition-colors">Work</a>
+            <a href="/engineering" className="hover:text-zinc-900 transition-colors">Engineering</a>
+            <a href="/cybersecurity" className="hover:text-zinc-900 transition-colors">Security</a>
+            <a href="/about" className="hover:text-zinc-900 transition-colors">About</a>
+            <a href="/contact" className="hover:text-zinc-900 transition-colors">Contact</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

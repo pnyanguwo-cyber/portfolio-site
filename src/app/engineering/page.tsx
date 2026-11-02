@@ -1,31 +1,11 @@
-"use client";
-
 import React from "react";
 import { Navigation } from "@/components/navigation";
-import { ProjectCard } from "@/components/project-card";
-import { Cpu, Terminal, GitBranch, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { TechStackBadge } from "@/components/tech-stack-badge";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
-const projects = [
-  {
-    title: "AI Coding Agent Harness",
-    description:
-      "Structured AI-assisted development workflow with human-led validation. Constrains the agent environment, decomposes tasks, reviews changes, and makes deterministic decisions on code acceptance using automated test fixtures and security linting.",
-    liveUrl: "https://github.com/pnyanguwo-cyber/ai-coding-agent-harness",
-    githubUrl: "https://github.com/pnyanguwo-cyber/ai-coding-agent-harness",
-    role: "Workflow Architect & Designer",
-    stack: ["Claude Code", "Gemini AI", "GitHub CLI", "TypeScript", "Vitest", "Node.js"],
-    slug: "ai-harness",
-  },
-  {
-    title: "Technical Decision Records (TDR)",
-    description:
-      "Comprehensive architectural documentation across Rent Zimbabwe and WA Directory, detailing synchronous vs webhook pipelines, HMAC signature verification, vector database embeddings, and multi-agent system state machines.",
-    githubUrl: "https://github.com/pnyanguwo-cyber/ai-coding-agent-harness",
-    role: "Technical Architect & Author",
-    stack: ["Markdown", "Mermaid", "TypeScript", "System Design", "Architecture"],
-    slug: "technical-decisions",
-  },
-];
+const stack = ["Claude Code", "Gemini AI", "TypeScript", "Vitest", "GitHub CLI", "Node.js"];
 
 export default function EngineeringPage() {
   return (
@@ -33,58 +13,78 @@ export default function EngineeringPage() {
       <Navigation />
 
       <main className="flex-1 py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 text-cyan-400 border border-cyan-500/20 mb-4 backdrop-blur-md">
-              <Cpu className="w-3.5 h-3.5" />
-              <span>SYSTEMS & AGENT ARCHITECTURE</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 text-zinc-50 tracking-tight mb-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+          <header className="mb-12">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 transition-colors mb-6"
+            >
+              &larr; Home
+            </Link>
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4">
               Engineering Deep-Dives
             </h1>
-            <p className="text-base sm:text-lg text-zinc-600 text-zinc-300 max-w-2xl mx-auto">
-              Technical deep-dives into systems design, multi-agent validation harnesses, and resilient architectural patterns implemented in production.
+            <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+              Technical deep-dives into systems design, AI-assisted development workflows,
+              and resilient architectural patterns implemented in production.
             </p>
-          </div>
+          </header>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-
-          {/* Architectural Pillars */}
-          <div className="max-w-4xl mx-auto rounded-2xl p-8 bg-white/70 bg-zinc-900/60 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl shadow-xl">
-            <h2 className="text-2xl font-bold text-zinc-900 text-zinc-100 mb-6 flex items-center gap-2.5">
-              <GitBranch className="h-6 w-6 text-cyan-500" />
-              Core Engineering Principles
-            </h2>
-            <div className="grid sm:grid-cols-3 gap-6">
-              <div className="p-4 rounded-xl bg-zinc-100/70 bg-zinc-950/70 border border-zinc-200/80 border-zinc-800/80">
-                <span className="text-xs font-mono text-cyan-600 text-cyan-400 font-bold block mb-1">01 / DETERMINISM</span>
-                <h3 className="font-semibold text-zinc-900 text-zinc-100 text-sm mb-2">Automated Test Harnesses</h3>
-                <p className="text-xs text-zinc-600 text-zinc-400 leading-relaxed">
-                  Every AI-assisted code change runs through strict unit and integration assertions before pull-request generation.
-                </p>
-              </div>
-              <div className="p-4 rounded-xl bg-zinc-100/70 bg-zinc-950/70 border border-zinc-200/80 border-zinc-800/80">
-                <span className="text-xs font-mono text-indigo-600 text-indigo-400 font-bold block mb-1">02 / DECOUPLING</span>
-                <h3 className="font-semibold text-zinc-900 text-zinc-100 text-sm mb-2">Asynchronous Webhooks</h3>
-                <p className="text-xs text-zinc-600 text-zinc-400 leading-relaxed">
-                  Edge routing isolates conversational WhatsApp API latency from relational database queries via queues and caching.
-                </p>
-              </div>
-              <div className="p-4 rounded-xl bg-zinc-100/70 bg-zinc-950/70 border border-zinc-200/80 border-zinc-800/80">
-                <span className="text-xs font-mono text-emerald-600 text-emerald-400 font-bold block mb-1">03 / ZERO-TRUST</span>
-                <h3 className="font-semibold text-zinc-900 text-zinc-100 text-sm mb-2">Boundary Validation</h3>
-                <p className="text-xs text-zinc-600 text-zinc-400 leading-relaxed">
-                  Cryptographic HMAC verification for all incoming requests, enforcing row-level security policies at the database layer.
-                </p>
-              </div>
+          <section className="mb-16">
+            <h2 className="text-lg font-semibold text-zinc-900 mb-4">AI Coding Agent Harness</h2>
+            <p className="text-zinc-600 mb-6 leading-relaxed">
+              A structured AI-assisted development workflow with human-led validation. The harness
+              constrains the agent environment, decomposes complex tasks into verifiable AST steps,
+              and executes deterministic Vitest assertions before any code is accepted. Every change
+              runs through strict unit and integration checks before pull-request generation.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {stack.map((tech) => (
+                <TechStackBadge key={tech} name={tech} />
+              ))}
             </div>
-          </div>
+            <Link href="https://github.com/pnyanguwo-cyber/ai-coding-agent-harness" target="_blank" rel="noopener noreferrer">
+              <Button asChild size="sm">
+                <a href="https://github.com/pnyanguwo-cyber/ai-coding-agent-harness" target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                  <ExternalLink className="h-3.5 w-3.5 ml-1" />
+                </a>
+              </Button>
+            </Link>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold text-zinc-900 mb-4">Core Engineering Principles</h2>
+            <ul className="space-y-4 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Determinism:</strong> Every AI-assisted change runs through strict unit and integration assertions before PR generation.
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Decoupling:</strong> Edge routing isolates conversational WhatsApp API latency from relational DB queries via queues and caching.
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Zero-Trust:</strong> Cryptographic HMAC verification for all incoming requests, enforcing row-level security at the database layer.
+              </li>
+              <li className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                <strong>Documentation:</strong> Technical Decision Records (TDR) for all architectural choices — sync vs webhook pipelines, vector embeddings, state machines.
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
+
+      <footer className="py-10 border-t border-zinc-200">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+          <p>Panashe Nyanguwo &copy; 2026</p>
+          <div className="flex items-center gap-6">
+            <a href="/projects" className="hover:text-zinc-900 transition-colors">Work</a>
+            <a href="/engineering" className="hover:text-zinc-900 transition-colors">Engineering</a>
+            <a href="/cybersecurity" className="hover:text-zinc-900 transition-colors">Security</a>
+            <a href="/about" className="hover:text-zinc-900 transition-colors">About</a>
+            <a href="/contact" className="hover:text-zinc-900 transition-colors">Contact</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
