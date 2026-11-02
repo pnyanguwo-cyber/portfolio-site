@@ -5,29 +5,33 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Panashe Nyanguwo — IT Professional | Software & AI Application Development | Cybersecurity",
-  description: "Building useful digital products with a security-aware mindset. Portfolio of Panashe Nyanguwo featuring Rent Zimbabwe, WA Directory, AI Coding Agent Harness, and Cybersecurity Labs.",
-  keywords: ["software development", "AI applications", "cybersecurity", "WhatsApp Business API", "Node.js", "Gemini", "Next.js", "Expo", "Supabase"],
+  title: "Panashe Nyanguwo — Software Engineer & Security Architect",
+  description: "Building innovative, secure and scalable software solutions with a focus on performance, user experience and trust.",
+  keywords: ["software engineering", "security architecture", "AI applications", "WhatsApp Business API", "Next.js", "Expo", "Supabase", "TypeScript", "Gemini"],
   authors: [{ name: "Panashe T.E. Nyanguwo" }],
   openGraph: {
-    title: "Panashe Nyanguwo — IT Professional | Software & AI Application Development | Cybersecurity",
-    description: "Building useful digital products with a security-aware mindset.",
+    title: "Panashe Nyanguwo — Software Engineer & Security Architect",
+    description: "Building innovative, secure and scalable software solutions with a focus on performance, user experience and trust.",
     type: "website",
     locale: "en_ZW",
     siteName: "Panashe Nyanguwo Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Panashe Nyanguwo — IT Professional | Software & AI Application Development | Cybersecurity",
-    description: "Building useful digital products with a security-aware mindset.",
+    title: "Panashe Nyanguwo — Software Engineer & Security Architect",
+    description: "Building innovative, secure and scalable software solutions with a focus on performance, user experience and trust.",
   },
   robots: {
     index: true,
@@ -41,7 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-gray-900">
+      <body className="min-h-full flex flex-col bg-white text-[var(--color-text-body)]">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

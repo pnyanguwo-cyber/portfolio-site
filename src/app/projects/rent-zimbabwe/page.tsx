@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { TechStackBadge } from "@/components/tech-stack-badge";
 import { ExternalLink } from "lucide-react";
@@ -32,23 +33,23 @@ export default function RentZimbabwePage() {
     <div className="flex flex-col min-h-screen">
       <Navigation />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1 pt-16">
         {/* Hero with background image */}
-        <section className="relative py-24 min-h-[60vh] flex items-center">
+        <section className="relative py-20 md:py-32 min-h-[60vh] flex items-center">
           <div className="absolute inset-0 -z-10" style={{ backgroundImage: 'url("/rent-zimbabwe.png")', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.08 }} />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-50/80 to-white" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[var(--color-primary)]/10 via-white to-[var(--color-cyan)]/10" />
 
-          <div className="container mx-auto px-4 sm:px-6 max-w-3xl z-10">
+          <div className="container relative z-10">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 transition-colors mb-6"
+              className="inline-flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors mb-6"
             >
               &larr; Back to Projects
             </Link>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-[var(--color-text-heading)] mb-4">
               Rent Zimbabwe
             </h1>
-            <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+            <p className="text-lg text-[var(--color-text-body)] mb-8 leading-relaxed max-w-2xl">
               Cross-platform property discovery platform connecting tenants with verified landlords
               across web, mobile, and WhatsApp.
             </p>
@@ -75,39 +76,45 @@ export default function RentZimbabwePage() {
         </section>
 
         {/* Screenshot */}
-        <section className="py-20 bg-zinc-50 border-y border-zinc-200">
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+        <section className="py-20 bg-[var(--color-bg-pale-blue)] border-y border-[var(--color-border)]">
+          <div className="container">
             <img
               src="/rent-zimbabwe.png"
               alt="Rent Zimbabwe app screenshot"
-              className="w-full rounded-xl shadow-lg border border-zinc-200"
+              className="w-full max-w-4xl mx-auto rounded-xl shadow-xl border border-[var(--color-border)]"
             />
           </div>
         </section>
 
         {/* Content */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+        <section className="py-20 bg-white">
+          <div className="container max-w-3xl">
             {/* Problem / Solution */}
-            <section className="mb-16">
+            <section className="mb-16 animate-fade-in-up">
               <div className="grid md:grid-cols-2 gap-8">
-                <article className="border border-zinc-200 rounded-lg p-6 bg-white">
-                  <h2 className="text-lg font-semibold text-zinc-900 mb-4">Problem</h2>
-                  <ul className="space-y-3 text-zinc-600 text-sm">
+                <article className="border border-[var(--color-border)] rounded-xl p-6 bg-white hover:border-[var(--color-primary)]/30 hover:shadow-lg transition-all duration-300">
+                  <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[var(--color-text-muted)]" />
+                    Problem
+                  </h2>
+                  <ul className="space-y-3 text-[var(--color-text-body)] text-sm">
                     {problem.map((item, i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="text-zinc-400 mt-0.5">&bull;</span>
+                        <span className="text-[var(--color-text-muted)] mt-0.5">&bull;</span>
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </article>
-                <article className="border border-zinc-200 rounded-lg p-6 bg-white">
-                  <h2 className="text-lg font-semibold text-zinc-900 mb-4">Solution</h2>
-                  <ul className="space-y-3 text-zinc-600 text-sm">
+                <article className="border border-[var(--color-border)] rounded-xl p-6 bg-white hover:border-[var(--color-success)]/30 hover:shadow-lg transition-all duration-300">
+                  <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[var(--color-success)]" />
+                    Solution
+                  </h2>
+                  <ul className="space-y-3 text-[var(--color-text-body)] text-sm">
                     {solution.map((item, i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="text-emerald-600 mt-0.5">&bull;</span>
+                        <span className="text-[var(--color-success)] mt-0.5">&bull;</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -117,8 +124,8 @@ export default function RentZimbabwePage() {
             </section>
 
             {/* Tech Stack */}
-            <section className="mb-16">
-              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Technology Stack</h2>
+            <section className="mb-16 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+              <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">Technology Stack</h2>
               <div className="flex flex-wrap gap-2">
                 {techStack.map((tech) => (
                   <TechStackBadge key={tech} name={tech} />
@@ -127,11 +134,11 @@ export default function RentZimbabwePage() {
             </section>
 
             {/* Architecture */}
-            <section>
-              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Architecture</h2>
-              <ul className="space-y-3 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
+            <section className="animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+              <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">Architecture</h2>
+              <ul className="space-y-3 text-[var(--color-text-body)] text-sm border-l-2 border-[var(--color-border)] pl-4">
                 {architecture.map((item, i) => (
-                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-[var(--color-text-muted)]">
                     {item}
                   </li>
                 ))}
@@ -141,18 +148,7 @@ export default function RentZimbabwePage() {
         </section>
       </main>
 
-      <footer className="py-10 border-t border-zinc-200">
-        <div className="container mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-          <p>Panashe Nyanguwo &copy; 2026</p>
-          <div className="flex items-center gap-6">
-            <a href="/projects" className="hover:text-zinc-900 transition-colors">Work</a>
-            <a href="/engineering" className="hover:text-zinc-900 transition-colors">Engineering</a>
-            <a href="/cybersecurity" className="hover:text-zinc-900 transition-colors">Security</a>
-            <a href="/about" className="hover:text-zinc-900 transition-colors">About</a>
-            <a href="/contact" className="hover:text-zinc-900 transition-colors">Contact</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

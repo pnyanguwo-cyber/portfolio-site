@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { ExternalLink, Mail, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import Link from "next/link";
@@ -13,58 +14,58 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen">
       <Navigation />
 
-      <main className="flex-1">
-        {/* Hero with gradient background */}
-        <section className="relative py-24 min-h-[50vh] flex items-center">
-          <div className="absolute inset-0 bg-gradient-to-br from-violet-50/80 via-white to-purple-50/80 -z-10" />
-          <div className="absolute inset-0 opacity-5 -z-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, violet, transparent 40%), radial-gradient(circle at 80% 70%, purple, transparent 40%)" }} />
+      <main id="main-content" className="flex-1 pt-16">
+        {/* Hero */}
+        <section className="relative py-20 md:py-32 bg-[var(--color-bg-pale-violet)]">
+          <div className="absolute inset-0 bg-decor-dots opacity-50 pointer-events-none" aria-hidden="true" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-          <div className="container mx-auto px-4 sm:px-6 max-w-xl z-10">
+          <div className="container relative">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 transition-colors mb-6"
+              className="inline-flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors mb-6"
             >
               &larr; Home
             </Link>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-[var(--color-text-heading)] mb-4 animate-fade-in-up">
               Contact
             </h1>
-            <p className="text-lg text-zinc-600 leading-relaxed">
+            <p className="text-lg text-[var(--color-text-body)] leading-relaxed max-w-xl animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               Available for full-time and contract roles. Feel free to reach out.
             </p>
           </div>
         </section>
 
         {/* Content */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 max-w-xl">
+        <section className="py-20 bg-white">
+          <div className="container max-w-xl">
             <section className="space-y-4">
-              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
-                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+              <article className="border border-[var(--color-border)] rounded-xl p-6 flex items-center gap-4 bg-white hover:border-[var(--color-primary)]/30 hover:shadow-lg transition-all duration-300 animate-fade-in-up">
+                <div className="p-3 rounded-lg bg-[var(--color-primary-light)] text-[var(--color-primary)] flex-shrink-0">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-500 font-mono mb-1">Email</p>
+                  <p className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">Email</p>
                   <a
                     href={`mailto:${email}`}
-                    className="text-zinc-900 hover:text-cyan-600 transition-colors"
+                    className="text-[var(--color-text-heading)] hover:text-[var(--color-primary)] transition-colors"
                   >
                     {email}
                   </a>
                 </div>
               </article>
 
-              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
-                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+              <article className="border border-[var(--color-border)] rounded-xl p-6 flex items-center gap-4 bg-white hover:border-[var(--color-primary)]/30 hover:shadow-lg transition-all duration-300 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+                <div className="p-3 rounded-lg bg-[var(--color-primary-light)] text-[var(--color-primary)] flex-shrink-0">
                   <GithubIcon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-500 font-mono mb-1">GitHub</p>
+                  <p className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">GitHub</p>
                   <a
                     href={github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-900 hover:text-cyan-600 transition-colors flex items-center gap-1"
+                    className="text-[var(--color-text-heading)] hover:text-[var(--color-primary)] transition-colors flex items-center gap-1"
                   >
                     github.com/pnyanguwo-cyber
                     <ExternalLink className="h-3.5 w-3.5" />
@@ -72,17 +73,17 @@ export default function ContactPage() {
                 </div>
               </article>
 
-              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
-                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+              <article className="border border-[var(--color-border)] rounded-xl p-6 flex items-center gap-4 bg-white hover:border-[var(--color-primary)]/30 hover:shadow-lg transition-all duration-300 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+                <div className="p-3 rounded-lg bg-[var(--color-primary-light)] text-[var(--color-primary)] flex-shrink-0">
                   <LinkedinIcon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-500 font-mono mb-1">LinkedIn</p>
+                  <p className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">LinkedIn</p>
                   <a
                     href={linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-900 hover:text-cyan-600 transition-colors flex items-center gap-1"
+                    className="text-[var(--color-text-heading)] hover:text-[var(--color-primary)] transition-colors flex items-center gap-1"
                   >
                     linkedin.com/in/panashe-nyanguwo
                     <ExternalLink className="h-3.5 w-3.5" />
@@ -90,16 +91,16 @@ export default function ContactPage() {
                 </div>
               </article>
 
-              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
-                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+              <article className="border border-[var(--color-border)] rounded-xl p-6 flex items-center gap-4 bg-white hover:border-[var(--color-primary)]/30 hover:shadow-lg transition-all duration-300 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+                <div className="p-3 rounded-lg bg-[var(--color-primary-light)] text-[var(--color-primary)] flex-shrink-0">
                   <FileText className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-zinc-500 font-mono mb-1">CV / Resume</p>
+                  <p className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">CV / Resume</p>
                   <a
                     href="/panashe-nyanguwo-cv.pdf"
                     download
-                    className="text-zinc-900 hover:text-cyan-600 transition-colors inline-flex items-center gap-1"
+                    className="text-[var(--color-text-heading)] hover:text-[var(--color-primary)] transition-colors inline-flex items-center gap-1"
                   >
                     Download PDF
                     <ExternalLink className="h-3.5 w-3.5" />
@@ -108,25 +109,14 @@ export default function ContactPage() {
               </article>
             </section>
 
-            <p className="mt-12 text-sm text-zinc-500">
+            <p className="mt-12 text-sm text-[var(--color-text-muted)]">
               Currently based in Harare, Zimbabwe. Open to remote and relocation opportunities.
             </p>
           </div>
         </section>
       </main>
 
-      <footer className="py-10 border-t border-zinc-200">
-        <div className="container mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-          <p>Panashe Nyanguwo &copy; 2026</p>
-          <div className="flex items-center gap-6">
-            <a href="/projects" className="hover:text-zinc-900 transition-colors">Work</a>
-            <a href="/engineering" className="hover:text-zinc-900 transition-colors">Engineering</a>
-            <a href="/cybersecurity" className="hover:text-zinc-900 transition-colors">Security</a>
-            <a href="/about" className="hover:text-zinc-900 transition-colors">About</a>
-            <a href="/contact" className="hover:text-zinc-900 transition-colors">Contact</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

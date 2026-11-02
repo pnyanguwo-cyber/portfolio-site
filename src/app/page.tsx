@@ -1,209 +1,134 @@
 import React from "react";
-import Link from "next/link";
 import { Navigation } from "@/components/navigation";
-import { ProjectCard } from "@/components/project-card";
-import { TechStackBadge } from "@/components/tech-stack-badge";
-import { ExternalLink, Mail, FileText } from "lucide-react";
-import { GithubIcon } from "@/components/icons";
-
-const projects = [
-  {
-    title: "Rent Zimbabwe",
-    description:
-      "Cross-platform property discovery platform connecting tenants with verified landlords across web, mobile, and WhatsApp. Built with Expo/React Native and Supabase.",
-    liveUrl: "https://infinityrental.vercel.app",
-    githubUrl: "https://github.com/pnyanguwo-cyber/infinityrental",
-    stack: ["Expo", "React Native", "TypeScript", "Supabase", "Expo Router"],
-    image: "/rent-zimbabwe.png",
-  },
-  {
-    title: "WA Directory",
-    description:
-      "Conversational business directory on WhatsApp using Gemini 2.0 Flash for natural-language search in English and Shona. Handles 10k+ conversations with HMAC-verified webhooks.",
-    liveUrl: "https://wadirectory.vercel.app",
-    githubUrl: "https://github.com/pnyanguwo-cyber/wa.directory",
-    stack: ["Next.js", "Gemini 2.0 Flash", "WhatsApp Cloud API", "Supabase pgvector"],
-    image: "/wa-directory.png",
-  },
-];
-
-const skills = {
-  "Languages": ["TypeScript", "JavaScript", "Python", "Go"],
-  "Frameworks": ["Next.js", "React", "React Native", "Expo", "Node.js"],
-  "Backend & AI": ["Supabase", "pgvector", "Gemini API", "WhatsApp Cloud API"],
-  "Security": ["HMAC", "RLS", "STRIDE", "OWASP", "Prompt Injection Defense"],
-};
+import { HeroIllustration } from "@/components/hero-illustration";
+import { Metrics } from "@/components/metrics";
+import { About } from "@/components/about";
+import { TechnicalSkills } from "@/components/technical-skills";
+import { FeaturedProjects } from "@/components/featured-projects";
+import { EngineeringApproach } from "@/components/engineering-approach";
+import { ContactCTA } from "@/components/contact-cta";
+import { Footer } from "@/components/footer";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
 
-      {/* Hero with parallax-like background */}
-      <section className="relative pt-32 pb-24 min-h-screen flex items-center justify-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/80 via-white to-indigo-50/80 -z-10" />
-        <div className="absolute inset-0 opacity-5 -z-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, blue, transparent 40%), radial-gradient(circle at 80% 70%, indigo, transparent 40%)" }} />
-
-        <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900 mb-8">
-            <span className="text-cyan-600">Panashe Nyanguwo</span>
-            <br />
-            <span className="text-zinc-700">Software Engineer & Security Architect</span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-zinc-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Building production software with a security-aware mindset. Specializing in cross-platform applications,
-            AI-powered conversational interfaces, and zero-trust security architectures.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Link href="/projects">
-              <a className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium text-white bg-cyan-600 hover:bg-cyan-700 transition-colors">
-                View My Work
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </Link>
-            <a
-              href="/panashe-nyanguwo-cv.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200 transition-colors"
-            >
-              <FileText className="h-4 w-4" />
-              Download CV
-            </a>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto text-sm">
-            <div className="text-center p-4 rounded-lg bg-white/60 border border-zinc-200">
-              <span className="text-2xl font-bold text-cyan-600">10k+</span>
-              <p className="text-zinc-500 text-xs mt-1">Conversations</p>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-white/60 border border-zinc-200">
-              <span className="text-2xl font-bold text-indigo-600">38ms</span>
-              <p className="text-zinc-500 text-xs mt-1">AI Latency</p>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-white/60 border border-zinc-200">
-              <span className="text-2xl font-bold text-emerald-600">100%</span>
-              <p className="text-zinc-500 text-xs mt-1">Zero-Trust</p>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-white/60 border border-zinc-200">
-              <span className="text-2xl font-bold text-amber-600">3+</span>
-              <p className="text-zinc-500 text-xs mt-1">Years Experience</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills with gradient background */}
-      <section className="py-20 bg-zinc-50/50 border-b border-zinc-200">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
-          <h2 className="text-2xl font-semibold text-zinc-900 mb-10 text-center">Technical Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {Object.entries(skills).map(([category, items]) => (
-              <div key={category} className="p-4 border border-zinc-200 rounded-lg">
-                <h3 className="font-mono text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3">
-                  {category}
-                </h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {items.map((skill) => (
-                    <TechStackBadge key={skill} name={skill} />
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Work */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold text-zinc-900 mb-4">Featured Projects</h2>
-            <p className="text-zinc-600">Production applications built with security and scalability in mind</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div key={project.title} className="group border border-zinc-200 rounded-xl overflow-hidden hover:border-zinc-300 transition-colors">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
+      <main id="main-content" className="flex-1 pt-16">
+        {/* Hero Section */}
+        <section
+          className="relative min-h-screen flex items-center bg-[var(--color-bg-gradient-hero)]"
+          aria-labelledby="hero-heading"
+        >
+          {/* Background decorations */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+            {/* Large radial gradient on the right */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[var(--color-primary)]/15 via-transparent to-[var(--color-cyan)]/10 rounded-full blur-3xl" />
+            {/* Secondary radial gradient */}
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-[var(--color-cyan)]/10 via-transparent to-[var(--color-primary)]/5 rounded-full blur-3xl" />
+            {/* Subtle dot pattern */}
+            <div className="absolute inset-0 bg-decor-dots opacity-30" />
+            {/* Wave separator at bottom */}
+            <div className="wave-separator">
+              <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path
+                  d="M0,80 C300,140 500,20 720,80 C940,140 1140,20 1440,80 L1440,120 L0,120 Z"
+                  fill="url(#heroWaveGradient)"
+                  opacity="0.15"
                 />
-                <div className="p-6 bg-white">
-                  <h3 className="text-xl font-semibold text-zinc-900 mb-2">{project.title}</h3>
-                  <p className="text-zinc-600 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.stack.map((tech) => (
-                      <TechStackBadge key={tech} name={tech} />
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    {project.liveUrl && (
-                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <a className="inline-flex items-center gap-1 text-sm text-zinc-700 hover:text-cyan-600 transition-colors">
-                          Live
-                          <ExternalLink className="h-3.5 w-3.5" />
-                        </a>
-                      </Link>
-                    )}
-                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <a className="inline-flex items-center gap-1 text-sm text-zinc-700 hover:text-cyan-600 transition-colors">
-                        Code
-                        <GithubIcon className="h-3.5 w-3.5" />
-                      </a>
-                    </Link>
-                  </div>
+                <defs>
+                  <linearGradient id="heroWaveGradient" x1="0" y1="0" x2="1440" y2="0">
+                    <stop offset="0%" stopColor="#087BFA" />
+                    <stop offset="100%" stopColor="#06B6D4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <div className="container relative py-16 md:py-24">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left: Content */}
+              <div className="text-center lg:text-left animate-fade-in-up">
+                <span className="inline-block px-4 py-1.5 text-sm font-medium text-[var(--color-primary)] bg-[var(--color-primary-light)] rounded-full mb-6">
+                  Available for exciting opportunities
+                </span>
+                <h1
+                  id="hero-heading"
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--color-text-heading)] leading-tight mb-6 text-balance"
+                >
+                  Panashe Nyanguwo
+                </h1>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-[var(--color-text-body)] leading-tight mb-8 text-balance">
+                  Software Engineer & Security Architect
+                </h2>
+                <p className="text-lg md:text-xl text-[var(--color-text-muted)] leading-relaxed mb-10 max-w-xl lg:mx-0">
+                  Building innovative, secure and scalable software solutions with a focus on performance,
+                  user experience and trust.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center lg:justify-start gap-4 mb-12">
+                  <a
+                    href="#projects"
+                    className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-white bg-[var(--color-primary)] rounded-lg hover:bg-[var(--color-primary-hover)] hover:shadow-xl hover:shadow-[var(--color-primary)]/25 transition-all duration-200"
+                  >
+                    View My Work
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a
+                    href="/panashe-nyanguwo-cv.pdf"
+                    download
+                    className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-[var(--color-primary)] bg-[var(--color-primary-light)] rounded-lg hover:bg-[var(--color-primary)]/10 transition-colors"
+                  >
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                    </svg>
+                    Download CV
+                  </a>
+                </div>
+
+                {/* Availability badge */}
+                <div className="inline-flex items-center gap-2 text-sm text-[var(--color-success)] bg-[var(--color-success-light)] px-4 py-2 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-success)] animate-pulse" aria-hidden="true" />
+                  <span className="font-medium">Available for full-time & contract roles</span>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Contact / CTA */}
-      <section className="py-20 bg-zinc-50 border-b border-zinc-200">
-        <div className="container mx-auto px-4 sm:px-6 max-w-3xl text-center">
-          <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Available for Full-Time & Contract Roles</h2>
-          <p className="text-zinc-600 mb-8">
-            Currently exploring opportunities in software engineering and security architecture.
-            Open to remote and relocation options.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:panashe.nyanguwo@example.com"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium text-white bg-cyan-600 hover:bg-cyan-700 transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-              Get in Touch
-            </a>
-            <a
-              href="/panashe-nyanguwo-cv.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium text-zinc-700 bg-white border border-zinc-200 hover:bg-zinc-50 transition-colors"
-            >
-              <FileText className="h-4 w-4" />
-              Download CV
-            </a>
-          </div>
-        </div>
-      </section>
+              {/* Right: Illustration */}
+              <div className="hidden lg:block animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+                <HeroIllustration />
+              </div>
+            </div>
 
-      {/* Footer */}
-      <footer className="py-10 border-t border-zinc-200">
-        <div className="container mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-          <div className="flex items-center gap-4">
-            <p>Panashe Nyanguwo &copy; 2026</p>
-            <span>&bull;</span>
-            <Link href="/contact">Contact</Link>
+            {/* Mobile illustration */}
+            <div className="lg:hidden mt-12 animate-fade-in-up" style={{ animationDelay: "300ms" }}>
+              <HeroIllustration />
+            </div>
           </div>
-          <div className="flex items-center gap-6">
-            <a href="https://github.com/pnyanguwo-cyber" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">GitHub</a>
-            <a href="https://linkedin.com/in/panashe-nyanguwo" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-900 transition-colors">LinkedIn</a>
-          </div>
-        </div>
-      </footer>
+        </section>
+
+        {/* Metrics */}
+        <Metrics />
+
+        {/* About */}
+        <About />
+
+        {/* Technical Skills */}
+        <TechnicalSkills />
+
+        {/* Featured Projects */}
+        <FeaturedProjects />
+
+        {/* Engineering Approach */}
+        <EngineeringApproach />
+
+        {/* Contact CTA */}
+        <ContactCTA />
+      </main>
+
+      <Footer />
     </div>
   );
 }

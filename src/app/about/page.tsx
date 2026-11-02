@@ -1,5 +1,6 @@
 import React from "react";
 import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { TechStackBadge } from "@/components/tech-stack-badge";
 import Link from "next/link";
 
@@ -20,23 +21,23 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <Navigation />
 
-      <main className="flex-1">
-        {/* Hero with gradient background */}
-        <section className="relative py-24 min-h-[50vh] flex items-center">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-50/80 via-white to-orange-50/80 -z-10" />
-          <div className="absolute inset-0 opacity-5 -z-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, amber, transparent 40%), radial-gradient(circle at 80% 70%, orange, transparent 40%)" }} />
+      <main id="main-content" className="flex-1 pt-16">
+        {/* Hero */}
+        <section className="relative py-20 md:py-32 bg-[var(--color-bg-pale-blue)]">
+          <div className="absolute inset-0 bg-decor-grid opacity-50 pointer-events-none" aria-hidden="true" />
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
-          <div className="container mx-auto px-4 sm:px-6 max-w-3xl z-10">
+          <div className="container relative">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 transition-colors mb-6"
+              className="inline-flex items-center gap-1.5 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors mb-6"
             >
               &larr; Home
             </Link>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-[var(--color-text-heading)] mb-4 animate-fade-in-up">
               About
             </h1>
-            <p className="text-lg text-zinc-600 leading-relaxed">
+            <p className="text-lg text-[var(--color-text-body)] leading-relaxed max-w-2xl animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               I&apos;m a software engineer and co-founder building production systems with a security-aware mindset.
               My work spans full-stack applications, AI-assisted development workflows, and zero-trust security architectures.
               <br /><br />
@@ -47,32 +48,32 @@ export default function AboutPage() {
         </section>
 
         {/* Content */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
-            <section className="mb-16">
-              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Education</h2>
-              <ul className="space-y-2 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
+        <section className="py-20 bg-white">
+          <div className="container max-w-3xl">
+            <section className="mb-16 animate-fade-in-up">
+              <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">Education</h2>
+              <ul className="space-y-2 text-[var(--color-text-body)] text-sm border-l-2 border-[var(--color-border)] pl-4">
                 {education.map((item, i) => (
-                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-[var(--color-text-muted)]">
                     {item}
                   </li>
                 ))}
               </ul>
             </section>
 
-            <section className="mb-16">
-              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Certifications</h2>
-              <ul className="space-y-2 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
+            <section className="mb-16 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+              <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">Certifications</h2>
+              <ul className="space-y-2 text-[var(--color-text-body)] text-sm border-l-2 border-[var(--color-border)] pl-4">
                 {certifications.map((item, i) => (
-                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-[var(--color-text-muted)]">
                     {item}
                   </li>
                 ))}
               </ul>
             </section>
 
-            <section className="bg-zinc-50 border border-zinc-200 rounded-xl p-6">
-              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Core Competencies</h2>
+            <section className="bg-[var(--color-bg-pale-blue)] border border-[var(--color-border)] rounded-xl p-6 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+              <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">Core Competencies</h2>
               <div className="flex flex-wrap gap-2">
                 {["TypeScript", "Next.js", "React Native", "Supabase", "PostgreSQL", "Gemini API", "WhatsApp API", "HMAC Auth", "RLS", "STRIDE", "OWASP"].map((skill) => (
                   <TechStackBadge key={skill} name={skill} />
@@ -83,18 +84,7 @@ export default function AboutPage() {
         </section>
       </main>
 
-      <footer className="py-10 border-t border-zinc-200">
-        <div className="container mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-          <p>Panashe Nyanguwo &copy; 2026</p>
-          <div className="flex items-center gap-6">
-            <a href="/projects" className="hover:text-zinc-900 transition-colors">Work</a>
-            <a href="/engineering" className="hover:text-zinc-900 transition-colors">Engineering</a>
-            <a href="/cybersecurity" className="hover:text-zinc-900 transition-colors">Security</a>
-            <a href="/about" className="hover:text-zinc-900 transition-colors">About</a>
-            <a href="/contact" className="hover:text-zinc-900 transition-colors">Contact</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
