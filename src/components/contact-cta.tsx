@@ -8,7 +8,7 @@ export function ContactCTA() {
   return (
     <section
       id="contact"
-      className="relative py-20 md:py-32"
+      className="relative py-16 md:py-24"
       aria-labelledby="contact-heading"
     >
       {/* Gradient background with animated shift */}
@@ -24,24 +24,24 @@ export function ContactCTA() {
 
       <div className="container relative text-center">
         <div className="max-w-3xl mx-auto animate-fade-in-up">
-          <h2 id="contact-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 id="contact-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Have a challenging problem to solve?
           </h2>
           <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-10">
-            Let&apos;s engineer something exceptional together. I&apos;m always open to discussing new opportunities,
+            Let&apos;s <span className="font-semibold">engineer something exceptional</span> together. I&apos;m always open to discussing new opportunities,
             interesting problems, or potential collaborations.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:panashe.nyanguwo@example.com"
+              href="mailto:pnyanguwo@proton.me"
               className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-[var(--color-primary)] bg-white rounded-lg hover:bg-white/90 hover:shadow-xl transition-all duration-200"
             >
               <Mail className="h-5 w-5" aria-hidden="true" />
               Get in Touch
             </a>
             <Link
-              href="/panashe-nyanguwo-cv.pdf"
+              href="/cv.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 text-base font-medium text-white bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg hover:bg-white/20 transition-all duration-200"
             >

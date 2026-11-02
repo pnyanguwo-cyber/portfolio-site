@@ -7,18 +7,18 @@ import { ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import Link from "next/link";
 
-const techStack = ["Expo", "React Native", "TypeScript", "Supabase", "Expo Router", "Tailwind CSS"];
+const techStack = ["React", "Vite", "TypeScript", "Supabase", "Expo"];
 
 const problem = [
   "Property seekers in Zimbabwe faced fragmented, unverified listings across WhatsApp groups and Facebook.",
-  "No centralized, searchable database of verified rental properties existed.",
+  "No centralized, searchable database of rental properties existed.",
   "Landlords lacked a standardized portal to showcase properties with photos and amenities.",
 ];
 
 const solution = [
   "Structured property listings with rich photo carousels, specs, and geospatial filtering.",
-  "Sub-second location and price filtering with debounced client-side queries.",
-  "Authenticated landlord dashboard with listing lifecycle controls and verification.",
+  "Fast location and price filtering with debounced client-side queries.",
+  "Authenticated landlord dashboard with listing lifecycle controls.",
 ];
 
 const architecture = [
@@ -50,22 +50,22 @@ export default function RentZimbabwePage() {
               Rent Zimbabwe
             </h1>
             <p className="text-lg text-[var(--color-text-body)] mb-8 leading-relaxed max-w-2xl">
-              Cross-platform property discovery platform connecting tenants with verified landlords
-              across web, mobile, and WhatsApp.
+              Cross-platform property discovery platform connecting tenants with landlords
+              across web and mobile.
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <Link href="https://infinityrental.vercel.app" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.rentzimbabwe.co.zw" target="_blank" rel="noopener noreferrer">
                 <Button asChild size="sm">
-                  <a href="https://infinityrental.vercel.app" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.rentzimbabwe.co.zw" target="_blank" rel="noopener noreferrer">
                     Live Platform
                     <ExternalLink className="h-3.5 w-3.5 ml-1" />
                   </a>
                 </Button>
               </Link>
-              <Link href="https://github.com/pnyanguwo-cyber/infinityrental" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/pnyanguwo-cyber/infinityhomeswebsite" target="_blank" rel="noopener noreferrer">
                 <Button asChild size="sm" variant="outline">
-                  <a href="https://github.com/pnyanguwo-cyber/infinityrental" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/pnyanguwo-cyber/infinityhomeswebsite" target="_blank" rel="noopener noreferrer">
                     <GithubIcon className="h-3.5 w-3.5 mr-1" />
                     Codebase
                   </a>

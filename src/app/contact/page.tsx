@@ -6,9 +6,9 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import Link from "next/link";
 
 export default function ContactPage() {
-  const email = "panashe.nyanguwo@example.com";
+  const email = "pnyanguwo@proton.me";
   const github = "https://github.com/pnyanguwo-cyber";
-  const linkedin = "https://linkedin.com/in/panashe-nyanguwo";
+  const linkedin = "https://linkedin.com/in/pnyanguwo-cyber";
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -85,7 +85,7 @@ export default function ContactPage() {
                     rel="noopener noreferrer"
                     className="text-[var(--color-text-heading)] hover:text-[var(--color-primary)] transition-colors flex items-center gap-1"
                   >
-                    linkedin.com/in/panashe-nyanguwo
+                    linkedin.com/in/pnyanguwo-cyber
                     <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </div>
@@ -98,7 +98,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-xs font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">CV / Resume</p>
                   <a
-                    href="/panashe-nyanguwo-cv.pdf"
+                    href="/cv.pdf"
                     download
                     className="text-[var(--color-text-heading)] hover:text-[var(--color-primary)] transition-colors inline-flex items-center gap-1"
                   >

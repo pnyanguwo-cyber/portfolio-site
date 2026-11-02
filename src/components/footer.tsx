@@ -6,15 +6,16 @@ import { Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 export function Footer() {
-  const [year, setYear] = useState(2026);
+  const [year, setYear] = useState<number | null>(null);
 
   useEffect(() => {
-    setYear(new Date().getFullYear());
+    const id = setTimeout(() => setYear(new Date().getFullYear()), 0);
+    return () => clearTimeout(id);
   }, []);
 
   return (
     <footer
-      className="relative py-12 md:py-16 bg-white border-t border-[var(--color-border)]"
+      className="relative py-10 md:py-12 bg-white border-t border-[var(--color-border)]"
       role="contentinfo"
     >
       <div className="container">
@@ -32,7 +33,7 @@ export function Footer() {
               <span>Panashe Nyanguwo</span>
             </Link>
             <p className="text-[var(--color-text-muted)] text-sm leading-relaxed max-w-xs">
-              Software Engineer & Security Architect building secure, scalable, and intelligent software solutions.
+              Software Engineer building secure, scalable software solutions.
             </p>
           </div>
 
@@ -93,11 +94,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:panashe.nyanguwo@example.com"
+                  href="mailto:pnyanguwo@proton.me"
                   className="flex items-center gap-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-                  <span>panashe.nyanguwo@example.com</span>
+                  <span>pnyanguwo@proton.me</span>
                 </a>
               </li>
               <li>
@@ -113,7 +114,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com/in/panashe-nyanguwo"
+                  href="https://linkedin.com/in/pnyanguwo-cyber"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors"
@@ -127,9 +128,9 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-8 border-t border-[var(--color-border)] flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-8 pt-6 border-t border-[var(--color-border)] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-[var(--color-text-muted)]">
-            &copy; {year} Panashe Nyanguwo. All rights reserved.
+            &copy; {year ?? ""} Panashe Nyanguwo. All rights reserved.
           </p>
           <p className="text-sm text-[var(--color-text-muted)]">
             Built with Next.js, TypeScript & Tailwind CSS

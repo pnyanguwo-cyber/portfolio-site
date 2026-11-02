@@ -31,7 +31,7 @@ export default function CybersecurityPage() {
             </h1>
             <p className="text-lg text-[var(--color-text-body)] mb-8 leading-relaxed max-w-2xl animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               A security-first methodology applied across system architectures — from cryptographic
-              API handshakes to hardened multi-agent LLM runtime defenses.
+              API handshakes to hardened LLM runtime defenses.
             </p>
           </div>
         </section>

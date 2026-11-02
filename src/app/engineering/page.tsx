@@ -40,9 +40,9 @@ export default function EngineeringPage() {
         <section className="py-20 bg-white">
           <div className="container max-w-3xl">
             <section className="mb-16 animate-fade-in-up">
-              <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">AI Coding Agent Harness</h2>
+              <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">AI-assisted development workflow</h2>
               <p className="text-[var(--color-text-body)] mb-6 leading-relaxed">
-                A structured AI-assisted development workflow with human-led validation. The harness
+                A structured AI-assisted development workflow with human-led validation. The workflow
                 constrains the agent environment, decomposes complex tasks into verifiable AST steps,
                 and executes deterministic Vitest assertions before any code is accepted. Every change
                 runs through strict unit and integration checks before pull-request generation.

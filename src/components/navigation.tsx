@@ -79,7 +79,7 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="/panashe-nyanguwo-cv.pdf"
+              href="/cv.pdf"
               download
               className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[var(--color-primary)] bg-[var(--color-primary-light)] rounded-lg hover:bg-[var(--color-primary)]/10 transition-colors"
             >
@@ -129,7 +129,7 @@ export function Navigation() {
             })}
             <div className="pt-4 border-t border-[var(--color-border)]">
               <a
-                href="/panashe-nyanguwo-cv.pdf"
+                href="/cv.pdf"
                 download
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-[var(--color-primary)] bg-[var(--color-primary-light)] rounded-lg hover:bg-[var(--color-primary)]/10 transition-colors"
                 onClick={closeMobileMenu}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SplashScreen } from "@/components/splash-screen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Panashe Nyanguwo — Software Engineer & Security Architect",
+  title: "Panashe Nyanguwo — Software Engineer",
   description: "Building innovative, secure and scalable software solutions with a focus on performance, user experience and trust.",
   keywords: ["software engineering", "security architecture", "AI applications", "WhatsApp Business API", "Next.js", "Expo", "Supabase", "TypeScript", "Gemini"],
   authors: [{ name: "Panashe T.E. Nyanguwo" }],
   openGraph: {
-    title: "Panashe Nyanguwo — Software Engineer & Security Architect",
+    title: "Panashe Nyanguwo — Software Engineer",
     description: "Building innovative, secure and scalable software solutions with a focus on performance, user experience and trust.",
     type: "website",
     locale: "en_ZW",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Panashe Nyanguwo — Software Engineer & Security Architect",
+    title: "Panashe Nyanguwo — Software Engineer",
     description: "Building innovative, secure and scalable software solutions with a focus on performance, user experience and trust.",
   },
   robots: {
@@ -49,6 +50,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
+        {/* Opening splash screen */}
+        <SplashScreen />
         {children}
       </body>
     </html>

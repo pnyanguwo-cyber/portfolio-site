@@ -22,7 +22,7 @@ const solution = [
 ];
 
 const architecture = [
-  "Next.js App Router with Edge Runtime webhooks for sub-100ms Meta payload processing",
+  "Next.js App Router with Edge Runtime webhooks for Meta payload ingestion",
   "Supabase pgvector for semantic business search with cosine similarity ranking",
   "Supabase Row-Level Security enforcing tenant isolation at the database layer",
   "Self-signed cryptographic admin tokens with automatic rotation and expiry",
