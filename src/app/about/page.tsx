@@ -20,16 +20,20 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <Navigation />
 
-      <main className="flex-1 py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
-          <header className="mb-12">
+      <main className="flex-1">
+        {/* Hero with gradient background */}
+        <section className="relative py-24 min-h-[50vh] flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-50/80 via-white to-orange-50/80 -z-10" />
+          <div className="absolute inset-0 opacity-5 -z-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, amber, transparent 40%), radial-gradient(circle at 80% 70%, orange, transparent 40%)" }} />
+
+          <div className="container mx-auto px-4 sm:px-6 max-w-3xl z-10">
             <Link
               href="/"
               className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 transition-colors mb-6"
             >
               &larr; Home
             </Link>
-            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
               About
             </h1>
             <p className="text-lg text-zinc-600 leading-relaxed">
@@ -39,39 +43,44 @@ export default function AboutPage() {
               Currently focused on: scalable WhatsApp-based platforms, multi-agent AI coding harnesses, and applying
               threat modeling (STRIDE) to production systems. Open to full-time and contract roles.
             </p>
-          </header>
+          </div>
+        </section>
 
-          <section className="mb-16">
-            <h2 className="text-lg font-semibold text-zinc-900 mb-4">Education</h2>
-            <ul className="space-y-2 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
-              {education.map((item, i) => (
-                <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
+        {/* Content */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+            <section className="mb-16">
+              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Education</h2>
+              <ul className="space-y-2 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
+                {education.map((item, i) => (
+                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-          <section className="mb-16">
-            <h2 className="text-lg font-semibold text-zinc-900 mb-4">Certifications</h2>
-            <ul className="space-y-2 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
-              {certifications.map((item, i) => (
-                <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
+            <section className="mb-16">
+              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Certifications</h2>
+              <ul className="space-y-2 text-zinc-600 text-sm border-l-2 border-zinc-200 pl-4">
+                {certifications.map((item, i) => (
+                  <li key={i} className="relative before:absolute before:-left-4 before:top-2 before:w-1.5 before:h-1.5 before:rounded-full before:bg-zinc-400">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
 
-          <section>
-            <h2 className="text-lg font-semibold text-zinc-900 mb-4">Core Competencies</h2>
-            <div className="flex flex-wrap gap-2">
-              {["TypeScript", "Next.js", "React Native", "Supabase", "PostgreSQL", "Gemini API", "WhatsApp API", "HMAC Auth", "RLS", "STRIDE", "OWASP"].map((skill) => (
-                <TechStackBadge key={skill} name={skill} />
-              ))}
-            </div>
-          </section>
-        </div>
+            <section className="bg-zinc-50 border border-zinc-200 rounded-xl p-6">
+              <h2 className="text-lg font-semibold text-zinc-900 mb-4">Core Competencies</h2>
+              <div className="flex flex-wrap gap-2">
+                {["TypeScript", "Next.js", "React Native", "Supabase", "PostgreSQL", "Gemini API", "WhatsApp API", "HMAC Auth", "RLS", "STRIDE", "OWASP"].map((skill) => (
+                  <TechStackBadge key={skill} name={skill} />
+                ))}
+              </div>
+            </section>
+          </div>
+        </section>
       </main>
 
       <footer className="py-10 border-t border-zinc-200">

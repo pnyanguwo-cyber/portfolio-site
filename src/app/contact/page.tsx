@@ -13,97 +13,106 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen">
       <Navigation />
 
-      <main className="flex-1 py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 max-w-xl">
-          <header className="mb-12">
+      <main className="flex-1">
+        {/* Hero with gradient background */}
+        <section className="relative py-24 min-h-[50vh] flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-violet-50/80 via-white to-purple-50/80 -z-10" />
+          <div className="absolute inset-0 opacity-5 -z-10" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, violet, transparent 40%), radial-gradient(circle at 80% 70%, purple, transparent 40%)" }} />
+
+          <div className="container mx-auto px-4 sm:px-6 max-w-xl z-10">
             <Link
               href="/"
               className="inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 transition-colors mb-6"
             >
               &larr; Home
             </Link>
-            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
               Contact
             </h1>
             <p className="text-lg text-zinc-600 leading-relaxed">
               Available for full-time and contract roles. Feel free to reach out.
             </p>
-          </header>
+          </div>
+        </section>
 
-          <section className="space-y-4">
-            <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4">
-              <div className="p-2 rounded bg-zinc-100 text-zinc-600">
-                <Mail className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm text-zinc-500 font-mono mb-1">Email</p>
-                <a
-                  href={`mailto:${email}`}
-                  className="text-zinc-900 hover:text-cyan-600 transition-colors"
-                >
-                  {email}
-                </a>
-              </div>
-            </article>
+        {/* Content */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 sm:px-6 max-w-xl">
+            <section className="space-y-4">
+              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
+                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-zinc-500 font-mono mb-1">Email</p>
+                  <a
+                    href={`mailto:${email}`}
+                    className="text-zinc-900 hover:text-cyan-600 transition-colors"
+                  >
+                    {email}
+                  </a>
+                </div>
+              </article>
 
-            <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4">
-              <div className="p-2 rounded bg-zinc-100 text-zinc-600">
-                <GithubIcon className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm text-zinc-500 font-mono mb-1">GitHub</p>
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-900 hover:text-cyan-600 transition-colors flex items-center gap-1"
-                >
-                  github.com/pnyanguwo-cyber
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            </article>
+              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
+                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+                  <GithubIcon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-zinc-500 font-mono mb-1">GitHub</p>
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-900 hover:text-cyan-600 transition-colors flex items-center gap-1"
+                  >
+                    github.com/pnyanguwo-cyber
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </article>
 
-            <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4">
-              <div className="p-2 rounded bg-zinc-100 text-zinc-600">
-                <LinkedinIcon className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm text-zinc-500 font-mono mb-1">LinkedIn</p>
-                <a
-                  href={linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-900 hover:text-cyan-600 transition-colors flex items-center gap-1"
-                >
-                  linkedin.com/in/panashe-nyanguwo
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            </article>
+              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
+                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+                  <LinkedinIcon className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-zinc-500 font-mono mb-1">LinkedIn</p>
+                  <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-900 hover:text-cyan-600 transition-colors flex items-center gap-1"
+                  >
+                    linkedin.com/in/panashe-nyanguwo
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </article>
 
-            <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4">
-              <div className="p-2 rounded bg-zinc-100 text-zinc-600">
-                <FileText className="h-5 w-5" />
-              </div>
-              <div>
-                <p className="text-sm text-zinc-500 font-mono mb-1">CV / Resume</p>
-                <a
-                  href="/panashe-nyanguwo-cv.pdf"
-                  download
-                  className="text-zinc-900 hover:text-cyan-600 transition-colors inline-flex items-center gap-1"
-                >
-                  Download PDF
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            </article>
-          </section>
+              <article className="border border-zinc-200 rounded-lg p-6 flex items-center gap-4 bg-white">
+                <div className="p-2 rounded bg-zinc-100 text-zinc-600">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-zinc-500 font-mono mb-1">CV / Resume</p>
+                  <a
+                    href="/panashe-nyanguwo-cv.pdf"
+                    download
+                    className="text-zinc-900 hover:text-cyan-600 transition-colors inline-flex items-center gap-1"
+                  >
+                    Download PDF
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </article>
+            </section>
 
-          <p className="mt-12 text-sm text-zinc-500">
-            Currently based in Harare, Zimbabwe. Open to remote and relocation opportunities.
-          </p>
-        </div>
+            <p className="mt-12 text-sm text-zinc-500">
+              Currently based in Harare, Zimbabwe. Open to remote and relocation opportunities.
+            </p>
+          </div>
+        </section>
       </main>
 
       <footer className="py-10 border-t border-zinc-200">
