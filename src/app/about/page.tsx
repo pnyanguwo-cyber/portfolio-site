@@ -3,6 +3,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { TechStackBadge } from "@/components/tech-stack-badge";
 import Link from "next/link";
+import { CertificationGallery } from "@/components/certification-gallery";
 
 const education = ["BSc Computer Science — University of Zimbabwe"];
 
@@ -12,12 +13,16 @@ const certifications = [
     issuer: "Google — Coursera",
     date: "Issued Mar 30, 2025",
     href: "https://www.coursera.org/verify/professional-cert/UGK16MCULMLY",
+    image: "/certifications/google-cybersecurity.jpeg",
+    imageAlt: "Google Cybersecurity Professional Certificate",
   },
   {
     title: "Introduction to Critical Infrastructure Protection (ICIP)",
     issuer: "OPSWAT Academy",
     date: "Issued May 30, 2026",
     href: "https://www.credly.com/badges/7adaaf3a-0b07-4c9e-87a8-5b7ff4b7d298",
+    image: "/certifications/opswat-icip.png",
+    imageAlt: "OPSWAT Academy ICIP certification badge",
   },
 ];
 
@@ -86,23 +91,7 @@ export default function AboutPage() {
 
             <section className="mb-16 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
               <h2 className="text-lg font-semibold text-[var(--color-text-heading)] mb-4">Certifications</h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {certifications.map((cert) => (
-                  <a
-                    key={cert.title}
-                    href={cert.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block border border-[var(--color-border)] rounded-xl p-5 bg-white hover:border-[var(--color-primary)]/40 hover:shadow-lg transition-all duration-300"
-                  >
-                    <p className="text-sm font-semibold text-[var(--color-text-heading)] mb-1">{cert.title}</p>
-                    <p className="text-sm text-[var(--color-text-muted)] mb-3">
-                      {cert.issuer} &middot; {cert.date}
-                    </p>
-                    <span className="text-xs font-medium text-[var(--color-primary)]">Verify credential &rarr;</span>
-                  </a>
-                ))}
-              </div>
+              <CertificationGallery certs={certifications} />
             </section>
 
             <section className="mb-16 animate-fade-in-up" style={{ animationDelay: "200ms" }}>

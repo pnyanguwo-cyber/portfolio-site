@@ -69,23 +69,30 @@ export default function HomePage() {
                 </div>
 
                 {/* Availability badge */}
-                <div className="inline-flex items-center gap-2 text-sm text-[var(--color-success)] bg-[var(--color-success-light)] px-4 py-2 rounded-full animate-fade-in-up" style={{ animationDelay: "400ms" }}>
-                  <span className="w-2 h-2 rounded-full bg-[var(--color-success)] animate-pulse" aria-hidden="true" />
-                  <span className="font-medium">Available for exciting opportunities</span>
+                <div className="inline-flex items-center gap-2.5 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
+                  <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-success)] opacity-75 animate-ping [animation-duration:2s]" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--color-success)]" />
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)]">Available for exciting opportunities</span>
                 </div>
               </div>
 
-              {/* Right: Image */}
-              <div className="relative animate-fade-in-up mx-auto w-full max-w-md lg:max-w-lg" style={{ animationDelay: "250ms" }}>
-                {/* Gradient frame glow */}
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[var(--color-primary)] to-[var(--color-cyan)] opacity-20 blur-2xl" aria-hidden="true" />
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                  <img
-                    src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&h=1000&fit=crop&auto=format&q=80"
-                    alt="Engineering workspace with a laptop by a window"
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                  />
+              {/* Right: Circular portrait with pulsing rings */}
+              <div className="relative animate-fade-in-up mx-auto w-full max-w-xs md:max-w-sm" style={{ animationDelay: "250ms" }}>
+                {/* Soft glow behind the avatar */}
+                <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-[var(--color-primary)] to-[var(--color-cyan)] opacity-20 blur-2xl" aria-hidden="true" />
+                <div className="relative aspect-square">
+                  <span className="absolute inset-0 rounded-full border-2 border-[var(--color-primary)]/40 animate-ping [animation-duration:2.5s]" aria-hidden="true" />
+                  <span className="absolute -inset-3 rounded-full border border-[var(--color-primary)]/25 animate-ping [animation-duration:2.5s] [animation-delay:0.6s]" aria-hidden="true" />
+                  <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl ring-4 ring-white">
+                    <img
+                      src="/hero-photo.jpg"
+                      alt="Portrait of Panashe Nyanguwo"
+                      className="w-full h-full object-cover object-[center_20%]"
+                      loading="eager"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
