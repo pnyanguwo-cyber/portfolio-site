@@ -81,7 +81,7 @@ export default function ContactPage() {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className={`p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 border-zinc-800 ${link.color}`}>
+                        <div className={`p-2.5 rounded-xl bg-zinc-100 border border-zinc-200 ${link.color}`}>
                           <Icon className="h-5 w-5" />
                         </div>
                         {link.copyable && (

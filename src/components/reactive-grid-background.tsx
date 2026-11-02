@@ -412,7 +412,7 @@ export function ReactiveGridBackground() {
       {/* High-Performance Reactive Canvas */}
       <canvas
         ref={canvasRef}
-        className="w-full h-full block opacity-85 dark:opacity-95"
+        className="w-full h-full block opacity-85"
       />
     </div>
   );

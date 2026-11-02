@@ -133,7 +133,7 @@ export default function AboutPage() {
                       {skill.items.map((item) => (
                         <span
                           key={item}
-                          className="text-xs font-mono bg-white dark:bg-zinc-900 text-zinc-700 text-zinc-300 border border-zinc-200 border-zinc-800 px-2.5 py-1 rounded-md"
+                          className="text-xs font-mono bg-white text-zinc-700 border border-zinc-200 px-2.5 py-1 rounded-md"
                         >
                           {item}
                         </span>
