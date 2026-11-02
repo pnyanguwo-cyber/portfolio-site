@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Code2, Sparkles, ShieldCheck, Cpu } from "lucide-react";
+import { Reveal } from "@/components/reveal";
 
 const skillCategories = [
   {
@@ -70,7 +71,7 @@ export function TechnicalSkills() {
   return (
     <section
       id="skills"
-      className="relative py-20 md:py-32 bg-[var(--color-bg-pale-blue)]"
+      className="relative py-16 md:py-24 bg-[var(--color-bg-pale-blue)]"
       aria-labelledby="skills-heading"
     >
       {/* Subtle grid pattern */}
@@ -78,24 +79,26 @@ export function TechnicalSkills() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="container relative">
-        <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in-up">
+        <Reveal>
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block px-3 py-1 text-xs font-medium text-[var(--color-primary)] bg-[var(--color-primary-light)] rounded-full mb-4">
             MY TECHNICAL SKILLS
           </span>
           <h2 id="skills-heading" className="text-3xl md:text-4xl font-bold text-[var(--color-text-heading)] mb-4 leading-tight">
-            Technologies I Work With
+            Technologies I{' '}<span className="text-gradient-animate">Work With</span>
           </h2>
           <p className="text-[var(--color-text-muted)] text-lg">
-            A curated stack for building secure, scalable, and intelligent software systems.
+            A curated stack for building secure, scalable software systems.
           </p>
         </div>
+        </Reveal>
 
+        <Reveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category, catIndex) => (
+          {skillCategories.map((category) => (
             <article
               key={category.title}
-              className="group p-6 rounded-2xl border border-[var(--color-border)] bg-white hover:border-[var(--color-primary)]/30 hover:shadow-xl transition-all duration-300 animate-fade-in-up"
-              style={{ animationDelay: `${catIndex * 100}ms` }}
+              className="group p-6 rounded-2xl border border-[var(--color-border)] bg-white hover:border-[var(--color-primary)]/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div
                 className={`inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 ${category.bgColor} ${category.color}`}
@@ -119,6 +122,7 @@ export function TechnicalSkills() {
             </article>
           ))}
         </div>
+        </Reveal>
       </div>
     </section>
   );

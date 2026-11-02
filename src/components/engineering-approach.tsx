@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Layers, Lock, Brain } from "lucide-react";
+import { Reveal } from "@/components/reveal";
 
 const pillars = [
   {
@@ -33,7 +34,7 @@ const pillars = [
 export function EngineeringApproach() {
   return (
     <section
-      className="relative py-20 md:py-32 bg-[var(--color-bg-pale-violet)]"
+      className="relative py-16 md:py-24 bg-[var(--color-bg-pale-violet)]"
       aria-labelledby="approach-heading"
     >
       {/* Decorative elements */}
@@ -41,19 +42,21 @@ export function EngineeringApproach() {
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true" />
 
       <div className="container relative">
-        <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in-up">
+        <Reveal>
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block px-3 py-1 text-xs font-medium text-[var(--color-primary)] bg-[var(--color-primary-light)] rounded-full mb-4">
             ENGINEERING PHILOSOPHY
           </span>
           <h2 id="approach-heading" className="text-3xl md:text-4xl font-bold text-[var(--color-text-heading)] mb-4 leading-tight">
-            How I Approach Engineering
+            How I <span className="text-gradient-animate">Approach</span> Engineering
           </h2>
           <p className="text-[var(--color-text-muted)] text-lg">
             Three pillars that guide every technical decision and architectural choice.
           </p>
         </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-5">
           {pillars.map((pillar, index) => (
             <article
               key={pillar.title}

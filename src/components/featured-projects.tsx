@@ -3,6 +3,7 @@
 import React from "react";
 import { ExternalLink, Code2 } from "lucide-react";
 import { ProjectCard } from "./project-card";
+import { Reveal } from "@/components/reveal";
 
 const projects = [
   {
@@ -29,7 +30,7 @@ export function FeaturedProjects() {
   return (
     <section
       id="projects"
-      className="relative py-20 md:py-32 bg-white"
+      className="relative py-16 md:py-24 bg-white"
       aria-labelledby="projects-heading"
     >
       {/* Decorative background */}
@@ -39,19 +40,21 @@ export function FeaturedProjects() {
       </div>
 
       <div className="container relative">
-        <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in-up">
+        <Reveal>
+        <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block px-3 py-1 text-xs font-medium text-[var(--color-primary)] bg-[var(--color-primary-light)] rounded-full mb-4">
             FEATURED PROJECTS
           </span>
           <h2 id="projects-heading" className="text-3xl md:text-4xl font-bold text-[var(--color-text-heading)] mb-4 leading-tight">
-            Real Solutions. Real Impact.
+            Real Solutions.{' '}<span className="text-gradient-animate">Real Impact.</span>
           </h2>
           <p className="text-[var(--color-text-muted)] text-lg">
             Production applications built with security, scalability, and user experience at the core.
           </p>
         </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.title}
