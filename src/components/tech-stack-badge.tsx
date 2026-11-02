@@ -1,10 +1,15 @@
+"use client";
+
+import React from "react";
+
 interface TechStackBadgeProps {
   name: string;
 }
 
 export function TechStackBadge({ name }: TechStackBadgeProps) {
   return (
-    <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full dark:bg-zinc-800 dark:text-zinc-200">
+    <span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-zinc-100 text-zinc-800 dark:bg-zinc-900/90 dark:text-zinc-300 border border-zinc-200/80 dark:border-zinc-800/80 hover:border-cyan-500/50 hover:text-cyan-600 dark:hover:text-cyan-400 hover:shadow-sm transition-all duration-200">
+      <span className="w-1 h-1 rounded-full bg-cyan-500/80" />
       {name}
     </span>
   );

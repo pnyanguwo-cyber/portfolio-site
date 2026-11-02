@@ -1,81 +1,92 @@
 "use client";
 
+import React from "react";
 import { Navigation } from "@/components/navigation";
 import { Button } from "@/components/ui/button";
-import { Code, Database, Users, ExternalLink } from "lucide-react";
+import { Code, Users, ExternalLink, CheckCircle2, Cpu } from "lucide-react";
+import { GithubIcon } from "@/components/icons";
 import Link from "next/link";
 
 export default function RentZimbabwePage() {
   const techStack = [
     { name: "Expo", description: "Cross-platform mobile framework for React Native" },
-    { name: "React Native", description: "Mobile app development with native components" },
-    { name: "TypeScript", description: "Type-safe JavaScript for reliable code" },
-    { name: "Supabase", description: "Open-source Firebase alternative with PostgreSQL" },
-    { name: "Expo Router", description: "File-based routing for Expo apps" },
-    { name: "Tailwind CSS", description: "Utility-first CSS framework" },
+    { name: "React Native", description: "Mobile app development with native component primitives" },
+    { name: "TypeScript", description: "Strict static typing across full client data layer" },
+    { name: "Supabase", description: "Scalable PostgreSQL relational database with Row-Level Security" },
+    { name: "Expo Router", description: "Typed file-based routing architecture" },
+    { name: "Tailwind CSS", description: "Modern responsive utility styling system" },
   ];
 
   const architecture = [
-    "Mobile-first user interface built with Expo/React Native",
-    "File-based routing via Expo Router for clean navigation",
-    "Context-based authentication for secure session management",
-    "Supabase backend with PostgreSQL for property listings",
-    "Real-time search and filtering capabilities",
-    "Landlord portal with property management features",
+    "Mobile-first responsive interface built with Expo and React Native",
+    "File-based typed routing via Expo Router for predictable navigation",
+    "Session authentication with custom claims for secure landlord privileges",
+    "Supabase PostgreSQL storage with optimized geospatial filtering",
+    "Real-time property search with debounced client-side vector queries",
+    "Secure landlord portal with property asset upload and listing verification",
   ];
 
   const challenges = [
     {
       title: "Cross-Platform Consistency",
       description:
-        "Ensuring property listings rendered identically on iOS, Android, and web required careful testing and component isolation. We built a shared design system with consistent spacing and typography scales.",
+        "Ensuring property listings rendered identically across iOS, Android, and web required component isolation and a unified design token system with strict typography scales.",
     },
     {
-      title: "Performance on Low-End Devices",
+      title: "Performance on Low-End Hardware",
       description:
-        "Many users in Zimbabwe use budget Android devices. We optimized bundle sizes, implemented lazy loading for images, and used FlatList with proper keys for efficient rendering.",
+        "Optimized bundle size, implemented memory-conscious image caching, and tuned FlatList recycling to ensure smooth 60fps scrolling on budget Android devices common in Zimbabwe.",
     },
     {
-      title: "Secure Landlord Authentication",
+      title: "Zero-Trust Landlord Authentication",
       description:
-        "Building a secure auth system without traditional server infrastructure required Supabase's built-in auth with custom claims for role-based access to property management.",
+        "Implemented secure JWT session management with Supabase Row-Level Security (RLS) policies, verifying landlord ownership before permitting listing updates or deletions.",
     },
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-white dark:bg-zinc-950">
+    <div className="flex flex-col min-h-screen">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-50 to-white dark:from-zinc-900 dark:to-zinc-950 py-16">
+      <section className="pt-20 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 mb-4 backdrop-blur-md">
+              <Cpu className="w-3.5 h-3.5" />
+              <span>SYSTEM ARCHITECTURE CASE STUDY</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight mb-6">
               Rent Zimbabwe
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              A property discovery platform connecting Zimbabwean property seekers with
-              landlords through web and WhatsApp.
+            <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-300 mb-8 max-w-2xl mx-auto">
+              A high-performance property discovery ecosystem connecting Zimbabwean tenants with landlords through web, mobile, and WhatsApp.
             </p>
 
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <div className="flex items-center gap-2">
-                <Code className="h-5 w-5 text-primary-600" />
-                <span className="text-gray-700">Code</span>
+            <div className="flex items-center justify-center gap-4 mb-8 text-sm font-mono text-zinc-500 dark:text-zinc-400">
+              <div className="flex items-center gap-1.5">
+                <Code className="h-4 w-4 text-cyan-500" />
+                <span>Full-Stack Architecture</span>
               </div>
-              <span className="text-gray-400">·</span>
-              <div className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-primary-600" />
-                <span className="text-gray-700">Co-founder</span>
+              <span>•</span>
+              <div className="flex items-center gap-1.5">
+                <Users className="h-4 w-4 text-indigo-500" />
+                <span>Co-founder</span>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="https://infinityrental.vercel.app" target="_blank" rel="noopener noreferrer">
-                <Button size="lg">Live Demo</Button>
+                <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-medium">
+                  <span>Explore Live Platform</span>
+                  <ExternalLink className="h-4 w-4 ml-2" />
+                </Button>
               </Link>
               <Link href="https://github.com/pnyanguwo-cyber/infinityrental" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg">GitHub</Button>
+                <Button variant="outline" size="lg" className="border-zinc-300 dark:border-zinc-800">
+                  <GithubIcon className="h-4 w-4 mr-2" />
+                  <span>Inspect Codebase</span>
+                </Button>
               </Link>
             </div>
           </div>
@@ -83,37 +94,52 @@ export default function RentZimbabwePage() {
       </section>
 
       {/* Problem & Solution */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 dark:bg-zinc-900 rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <div className="bg-white/70 dark:bg-zinc-900/60 rounded-2xl p-6 sm:p-8 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl shadow-lg">
+              <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
                 The Problem
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Property seekers in Zimbabwe faced significant challenges in discovering
-                rental properties:
+              <p className="text-zinc-600 dark:text-zinc-400 mb-4 text-sm leading-relaxed">
+                Property seekers in Zimbabwe faced extreme fragmentation when discovering rental properties:
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• Fragmented property listings across WhatsApp groups and Facebook</li>
-                <li>• No centralized database of available properties</li>
-                <li>• Landlords lacked a professional presence</li>
-                <li>• Difficulty viewing property photos in one place</li>
+              <ul className="space-y-2.5 text-zinc-600 dark:text-zinc-300 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-500 mt-0.5">•</span>
+                  <span>Unverified listings scattered across WhatsApp groups and Facebook posts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-500 mt-0.5">•</span>
+                  <span>Absence of a centralized, searchable database of verified rentals</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-rose-500 mt-0.5">•</span>
+                  <span>No standardized portal for landlords to showcase photos and amenities</span>
+                </li>
               </ul>
             </div>
 
-            <div className="bg-white dark:bg-zinc-950 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <div className="bg-white/70 dark:bg-zinc-900/60 rounded-2xl p-6 sm:p-8 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl shadow-lg">
+              <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">
                 The Solution
               </h2>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                A cross-platform property discovery platform:
+              <p className="text-zinc-600 dark:text-zinc-400 mb-4 text-sm leading-relaxed">
+                An engineering-first cross-platform discovery platform:
               </p>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                <li>• Modern property listings with photos and descriptions</li>
-                <li>• Location-based search and filtering</li>
-                <li>• Landlord portal for property management</li>
-                <li>• Favorites system for saved searches</li>
+              <ul className="space-y-2.5 text-zinc-600 dark:text-zinc-300 text-sm">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                  <span>Structured property listings with rich photo carousels and specs</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                  <span>Sub-second geospatial location and price filtering</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
+                  <span>Authenticated landlord dashboard with listing lifecycle controls</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -121,18 +147,25 @@ export default function RentZimbabwePage() {
       </section>
 
       {/* Tech Stack */}
-      <section className="bg-gray-50 dark:bg-zinc-900 py-16">
+      <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
               Technology Stack
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
             {techStack.map((tech) => (
-              <div key={tech.name} className="bg-white dark:bg-zinc-950 rounded-xl p-4 border border-gray-200 dark:border-gray-800">
-                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{tech.name}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{tech.description}</p>
+              <div
+                key={tech.name}
+                className="bg-white/70 dark:bg-zinc-900/60 rounded-xl p-5 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl"
+              >
+                <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm mb-1 text-cyan-600 dark:text-cyan-400 font-mono">
+                  {tech.name}
+                </h3>
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  {tech.description}
+                </p>
               </div>
             ))}
           </div>
@@ -140,58 +173,42 @@ export default function RentZimbabwePage() {
       </section>
 
       {/* Architecture */}
-      <section className="py-16 bg-white dark:bg-zinc-950">
+      <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12">
-            System Architecture
-          </h2>
-
-          <div className="bg-gray-50 dark:bg-zinc-900 rounded-xl p-6 mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Key Components</h3>
+          <div className="bg-white/70 dark:bg-zinc-900/60 rounded-2xl p-8 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl shadow-lg">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
+              System Architecture & Core Components
+            </h2>
             <div className="grid gap-3">
               {architecture.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary-600 rounded-full mt-2" />
-                  <p className="text-gray-700 dark:text-gray-300">{item}</p>
+                <div key={index} className="flex items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+                  <span className="w-2 h-2 bg-cyan-500 rounded-full mt-2 shrink-0" />
+                  <span>{item}</span>
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="bg-white dark:bg-zinc-950 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Technical Decisions</h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-              <li>
-                <strong>Supabase for Backend:</strong> Provided instant PostgreSQL setup with
-                real-time capabilities, handling authentication and database operations.
-              </li>
-              <li>
-                <strong>Expo for Cross-Platform:</strong> Enabled single codebase deployment
-                to iOS, Android, and web, reaching maximum users with minimal overhead.
-              </li>
-              <li>
-                <strong>File-Based Routing:</strong> Expo Router provided clean, predictable
-                navigation patterns similar to Next.js.
-              </li>
-            </ul>
           </div>
         </div>
       </section>
 
       {/* Challenges */}
-      <section className="py-16">
+      <section className="py-12 mb-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12">
-            Engineering Challenges
+          <h2 className="text-3xl font-bold text-center text-zinc-900 dark:text-zinc-100 mb-8">
+            Engineering Challenges & Resolutions
           </h2>
-
-          <div className="grid md:grid-cols-1 gap-8">
+          <div className="grid gap-6">
             {challenges.map((challenge) => (
-              <div key={challenge.title} className="bg-white dark:bg-zinc-950 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+              <div
+                key={challenge.title}
+                className="bg-white/70 dark:bg-zinc-900/60 rounded-xl p-6 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl"
+              >
+                <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
                   {challenge.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">{challenge.description}</p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  {challenge.description}
+                </p>
               </div>
             ))}
           </div>
