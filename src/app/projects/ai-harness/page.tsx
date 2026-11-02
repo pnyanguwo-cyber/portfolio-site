@@ -61,18 +61,18 @@ export default function AIHarnessPage() {
       <section className="pt-20 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 mb-4 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 text-cyan-400 border border-cyan-500/20 mb-4 backdrop-blur-md">
               <Bot className="w-3.5 h-3.5" />
               <span>AI CODING HARNESS ARCHITECTURE</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 text-zinc-50 tracking-tight mb-6">
               AI Coding Agent Harness
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-600 text-zinc-300 mb-8 max-w-2xl mx-auto">
               A structured AI-assisted development workflow with human-led validation, tool sandboxing, and automated regression guards.
             </p>
 
-            <div className="flex items-center justify-center gap-4 mb-8 text-sm font-mono text-zinc-500 dark:text-zinc-400">
+            <div className="flex items-center justify-center gap-4 mb-8 text-sm font-mono text-zinc-500 text-zinc-400">
               <div className="flex items-center gap-1.5">
                 <Code className="h-4 w-4 text-cyan-500" />
                 <span>Workflow Architect</span>
@@ -101,7 +101,7 @@ export default function AIHarnessPage() {
       <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-3xl font-bold text-zinc-900 text-zinc-100">
               The 7-Step Validation Workflow
             </h2>
           </div>
@@ -109,16 +109,16 @@ export default function AIHarnessPage() {
             {workflowSteps.map((step) => (
               <div
                 key={step.step}
-                className="bg-white/70 dark:bg-zinc-900/60 rounded-xl p-5 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl flex items-start gap-4"
+                className="bg-white/70 bg-zinc-900/60 rounded-xl p-5 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl flex items-start gap-4"
               >
-                <div className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-cyan-500/10 text-cyan-600 text-cyan-400 border border-cyan-500/20 font-mono font-bold text-sm flex items-center justify-center shrink-0">
                   {step.step}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm mb-1">
+                  <h3 className="font-semibold text-zinc-900 text-zinc-100 text-sm mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-600 text-zinc-400 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -131,14 +131,14 @@ export default function AIHarnessPage() {
       {/* Harness Guardrails */}
       <section className="py-12 mb-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-white/70 dark:bg-zinc-900/60 rounded-2xl p-8 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl shadow-lg">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6 flex items-center gap-2">
+          <div className="bg-white/70 bg-zinc-900/60 rounded-2xl p-8 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl shadow-lg">
+            <h2 className="text-2xl font-bold text-zinc-900 text-zinc-100 mb-6 flex items-center gap-2">
               <Shield className="h-6 w-6 text-indigo-500" />
               Core Safety Guardrails & Determinism Constraints
             </h2>
             <div className="grid gap-3.5">
               {constraints.map((item, index) => (
-                <div key={index} className="flex items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+                <div key={index} className="flex items-start gap-3 text-sm text-zinc-700 text-zinc-300">
                   <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
                   <span>{item}</span>
                 </div>

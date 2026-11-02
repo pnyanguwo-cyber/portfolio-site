@@ -57,14 +57,14 @@ export default function CybersecurityPage() {
       <main className="flex-1 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 mb-4 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-600 text-indigo-400 border border-indigo-500/20 mb-4 backdrop-blur-md">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>DEFENSE-IN-DEPTH ENCLAVE</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight mb-6 flex items-center justify-center gap-3">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 text-zinc-50 tracking-tight mb-6 flex items-center justify-center gap-3">
               Cybersecurity & Secure Systems
             </h1>
-            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-zinc-600 text-zinc-300 max-w-2xl mx-auto">
               A security-first methodology applied across system architectures, from cryptographic API handshakes to hardened multi-agent LLM runtime defenses.
             </p>
           </div>
@@ -76,8 +76,8 @@ export default function CybersecurityPage() {
           </div>
 
           {/* Security Concepts Grid */}
-          <div className="max-w-4xl mx-auto rounded-2xl p-8 bg-white/70 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl shadow-xl">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">
+          <div className="max-w-4xl mx-auto rounded-2xl p-8 bg-white/70 bg-zinc-900/60 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl shadow-xl">
+            <h2 className="text-2xl font-bold text-zinc-900 text-zinc-100 mb-6">
               Security Knowledge & Core Competencies
             </h2>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -86,17 +86,17 @@ export default function CybersecurityPage() {
                 return (
                   <div
                     key={concept.title}
-                    className="p-5 rounded-xl bg-zinc-100/70 dark:bg-zinc-950/70 border border-zinc-200/80 dark:border-zinc-800/80 hover:border-cyan-500/40 transition-colors"
+                    className="p-5 rounded-xl bg-zinc-100/70 bg-zinc-950/70 border border-zinc-200/80 border-zinc-800/80 hover:border-cyan-500/40 transition-colors"
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-500">
                         <Icon className="h-4 w-4" />
                       </div>
-                      <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">
+                      <h3 className="font-semibold text-zinc-900 text-zinc-100 text-sm">
                         {concept.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 text-zinc-400 leading-relaxed">
                       {concept.description}
                     </p>
                   </div>

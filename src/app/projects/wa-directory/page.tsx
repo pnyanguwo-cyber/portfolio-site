@@ -34,18 +34,18 @@ export default function WADirectoryPage() {
       <section className="pt-20 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 mb-4 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-600 text-emerald-400 border border-emerald-500/20 mb-4 backdrop-blur-md">
               <Bot className="w-3.5 h-3.5" />
               <span>AI CONVERSATIONAL AGENT CASE STUDY</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 text-zinc-50 tracking-tight mb-6">
               WA Directory
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-zinc-600 text-zinc-300 mb-8 max-w-2xl mx-auto">
               Conversational business discovery platform using WhatsApp Business API and Google Gemini AI for natural language queries in Zimbabwe.
             </p>
 
-            <div className="flex items-center justify-center gap-4 mb-8 text-sm font-mono text-zinc-500 dark:text-zinc-400">
+            <div className="flex items-center justify-center gap-4 mb-8 text-sm font-mono text-zinc-500 text-zinc-400">
               <div className="flex items-center gap-1.5">
                 <Code className="h-4 w-4 text-cyan-500" />
                 <span>Lead Architect</span>
@@ -70,7 +70,7 @@ export default function WADirectoryPage() {
                 </Button>
               </Link>
               <Link href="https://github.com/pnyanguwo-cyber/wa.directory" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" className="border-zinc-300 dark:border-zinc-800">
+                <Button variant="outline" size="lg" className="border-zinc-300 border-zinc-800">
                   <GithubIcon className="h-4 w-4 mr-2" />
                   <span>Inspect Codebase</span>
                 </Button>
@@ -84,7 +84,7 @@ export default function WADirectoryPage() {
       <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-3xl font-bold text-zinc-900 text-zinc-100">
               Technology Stack
             </h2>
           </div>
@@ -92,12 +92,12 @@ export default function WADirectoryPage() {
             {techStack.map((tech) => (
               <div
                 key={tech.name}
-                className="bg-white/70 dark:bg-zinc-900/60 rounded-xl p-5 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl"
+                className="bg-white/70 bg-zinc-900/60 rounded-xl p-5 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl"
               >
-                <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 text-sm mb-1 text-cyan-600 dark:text-cyan-400 font-mono">
+                <h3 className="font-semibold text-zinc-900 text-zinc-100 text-sm mb-1 text-cyan-600 text-cyan-400 font-mono">
                   {tech.name}
                 </h3>
-                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <p className="text-xs text-zinc-600 text-zinc-400 leading-relaxed">
                   {tech.description}
                 </p>
               </div>
@@ -109,14 +109,14 @@ export default function WADirectoryPage() {
       {/* Security Model */}
       <section className="py-12 mb-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-white/70 dark:bg-zinc-900/60 rounded-2xl p-8 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl shadow-lg">
-            <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6 flex items-center gap-2">
+          <div className="bg-white/70 bg-zinc-900/60 rounded-2xl p-8 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl shadow-lg">
+            <h2 className="text-2xl font-bold text-zinc-900 text-zinc-100 mb-6 flex items-center gap-2">
               <Shield className="h-6 w-6 text-emerald-500" />
               Zero-Trust Security Architecture
             </h2>
             <div className="grid gap-3.5">
               {securityModel.map((item, index) => (
-                <div key={index} className="flex items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+                <div key={index} className="flex items-start gap-3 text-sm text-zinc-700 text-zinc-300">
                   <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
                   <span>{item}</span>
                 </div>

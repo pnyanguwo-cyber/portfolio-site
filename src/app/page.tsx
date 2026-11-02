@@ -86,7 +86,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
             {/* Silicon Valley Availability Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 mb-8 backdrop-blur-md shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-700 text-emerald-400 border border-emerald-500/20 mb-8 backdrop-blur-md shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -95,7 +95,7 @@ export default function HomePage() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-zinc-900 text-zinc-50 leading-[1.1] mb-6">
               Architecting{" "}
               <span className="bg-gradient-to-r from-cyan-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent">
                 Intelligent Systems
@@ -104,8 +104,8 @@ export default function HomePage() {
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-              I&apos;m <strong className="text-zinc-900 dark:text-zinc-100 font-semibold">Panashe Nyanguwo</strong> — an IT professional, co-founder, and systems engineer building production software, Gemini 2.0 AI applications, and zero-trust security architectures.
+            <p className="text-base sm:text-lg md:text-xl text-zinc-600 text-zinc-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+              I&apos;m <strong className="text-zinc-900 text-zinc-100 font-semibold">Panashe Nyanguwo</strong> — an IT professional, co-founder, and systems engineer building production software, Gemini 2.0 AI applications, and zero-trust security architectures.
             </p>
 
             {/* CTAs */}
@@ -122,7 +122,7 @@ export default function HomePage() {
 
               <button
                 onClick={handlePulse}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm font-medium bg-white/70 dark:bg-zinc-900/70 border border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 backdrop-blur-md transition-all shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm font-medium bg-white/70 bg-zinc-900/70 border border-zinc-300 border-zinc-800 text-zinc-800 text-zinc-200 hover:bg-zinc-100 hover:bg-zinc-800/80 backdrop-blur-md transition-all shadow-sm"
               >
                 <Sparkles className="h-4 w-4 text-cyan-500 animate-spin-slow" />
                 <span>Trigger Anti-Gravity Ripple</span>
@@ -132,7 +132,7 @@ export default function HomePage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto border-zinc-300 dark:border-zinc-800 px-6 py-6 rounded-xl text-sm"
+                  className="w-full sm:w-auto border-zinc-300 border-zinc-800 px-6 py-6 rounded-xl text-sm"
                 >
                   Contact & Collaboration
                 </Button>
@@ -141,38 +141,38 @@ export default function HomePage() {
 
             {/* Key Silicon Valley Metrics Strip */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto mb-12">
-              <div className="p-4 rounded-xl bg-white/60 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-md text-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-cyan-600 dark:text-cyan-400 font-mono">
+              <div className="p-4 rounded-xl bg-white/60 bg-zinc-900/50 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-md text-center">
+                <span className="text-2xl sm:text-3xl font-extrabold text-cyan-600 text-cyan-400 font-mono">
                   10k+
                 </span>
-                <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-medium">
+                <span className="block text-xs text-zinc-500 text-zinc-400 mt-1 font-medium">
                   Conversations Handled
                 </span>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/60 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-md text-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 font-mono">
+              <div className="p-4 rounded-xl bg-white/60 bg-zinc-900/50 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-md text-center">
+                <span className="text-2xl sm:text-3xl font-extrabold text-indigo-600 text-indigo-400 font-mono">
                   38ms
                 </span>
-                <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-medium">
+                <span className="block text-xs text-zinc-500 text-zinc-400 mt-1 font-medium">
                   Gemini AI Latency
                 </span>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/60 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-md text-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">
+              <div className="p-4 rounded-xl bg-white/60 bg-zinc-900/50 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-md text-center">
+                <span className="text-2xl sm:text-3xl font-extrabold text-emerald-600 text-emerald-400 font-mono">
                   100%
                 </span>
-                <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-medium">
+                <span className="block text-xs text-zinc-500 text-zinc-400 mt-1 font-medium">
                   Zero-Trust Enclave
                 </span>
               </div>
 
-              <div className="p-4 rounded-xl bg-white/60 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-md text-center">
-                <span className="text-2xl sm:text-3xl font-extrabold text-amber-600 dark:text-amber-400 font-mono">
+              <div className="p-4 rounded-xl bg-white/60 bg-zinc-900/50 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-md text-center">
+                <span className="text-2xl sm:text-3xl font-extrabold text-amber-600 text-amber-400 font-mono">
                   0.0g
                 </span>
-                <span className="block text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-medium">
+                <span className="block text-xs text-zinc-500 text-zinc-400 mt-1 font-medium">
                   Anti-Gravity Defiance
                 </span>
               </div>
@@ -202,14 +202,14 @@ export default function HomePage() {
       <section className="py-20 relative">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 text-cyan-400 border border-cyan-500/20 mb-3">
               <Cpu className="w-3.5 h-3.5" />
               <span>PRODUCTION SYSTEMS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 text-zinc-100 tracking-tight">
               Flagship Software & AI Products
             </h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3">
+            <p className="text-zinc-600 text-zinc-400 text-sm sm:text-base mt-3">
               Scalable, resilient architectures tackling real-world discovery and commerce challenges.
             </p>
           </div>
@@ -223,17 +223,17 @@ export default function HomePage() {
       </section>
 
       {/* AI Engineering & Security Enclave */}
-      <section className="py-20 relative border-t border-zinc-200/60 dark:border-zinc-800/60">
+      <section className="py-20 relative border-t border-zinc-200/60 border-zinc-800/60">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-600 text-indigo-400 border border-indigo-500/20 mb-3">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>AI AGENTS & CYBERSECURITY</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 text-zinc-100 tracking-tight">
               Agentic Engineering & Security Architecture
             </h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-3">
+            <p className="text-zinc-600 text-zinc-400 text-sm sm:text-base mt-3">
               Structured multi-agent validation loops paired with zero-trust application defense.
             </p>
           </div>
@@ -247,24 +247,24 @@ export default function HomePage() {
       </section>
 
       {/* Architectural Philosophy / Silicon Valley Callout */}
-      <section className="py-20 relative border-t border-zinc-200/60 dark:border-zinc-800/60">
+      <section className="py-20 relative border-t border-zinc-200/60 border-zinc-800/60">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-zinc-100/80 via-white/80 to-zinc-100/80 dark:from-zinc-900/80 dark:via-zinc-950/80 dark:to-zinc-900/80 border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+          <div className="max-w-4xl mx-auto rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-zinc-100/80 via-white/80 to-zinc-100/80 from-zinc-900/80 via-zinc-950/80 to-zinc-900/80 border border-zinc-200/80 border-zinc-800/80 backdrop-blur-xl shadow-2xl relative overflow-hidden">
             {/* Background Light Beam */}
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 text-center space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-cyan-500/15 text-cyan-600 text-cyan-400 border border-cyan-500/30">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-500" />
                 <span>ANTI-GRAVITY ENGINEERING MINDSET</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 text-zinc-100">
                 Ready to build resilient, AI-accelerated products?
               </h2>
 
-              <p className="text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              <p className="text-zinc-600 text-zinc-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
                 Whether it is architecting an enterprise WhatsApp agent, hardening zero-trust security perimeters, or leading multi-agent AI engineering workflows — let&apos;s build software that defies conventional limits.
               </p>
 
@@ -282,7 +282,7 @@ export default function HomePage() {
                 <a
                   href="/panashe-nyanguwo-cv.pdf"
                   download
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-medium border border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-medium border border-zinc-300 border-zinc-800 text-zinc-800 text-zinc-200 hover:bg-zinc-100 hover:bg-zinc-900 transition-colors"
                 >
                   Download Curriculum Vitae
                 </a>
@@ -293,9 +293,9 @@ export default function HomePage() {
       </section>
 
       {/* Silicon Valley Footer */}
-      <footer className="py-12 border-t border-zinc-200/60 dark:border-zinc-800/60 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-md">
+      <footer className="py-12 border-t border-zinc-200/60 border-zinc-800/60 bg-white/40 bg-zinc-950/40 backdrop-blur-md">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400 font-mono">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 text-zinc-400 font-mono">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
               <span>Panashe Nyanguwo © 2026</span>

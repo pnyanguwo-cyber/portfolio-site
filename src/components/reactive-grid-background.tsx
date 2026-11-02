@@ -24,14 +24,12 @@ interface GridPoint {
 
 export function ReactiveGridBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     // Detect dark mode initially and on change
     const checkDark = () => {
-      const isDarkMode =
-        document.documentElement.classList.contains("dark") ||
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const isDarkMode = document.documentElement.classList.contains("dark");
       setIsDark(isDarkMode);
     };
 
@@ -242,7 +240,7 @@ export function ReactiveGridBackground() {
       }
 
       // 3. Update & Draw Grid Points with Anti-Gravity Repulsion Physics
-      const pointColorDefault = isDark ? "rgba(255, 255, 255, 0.12)" : "rgba(15, 23, 42, 0.10)";
+      const pointColorDefault = isDark ? "rgba(255, 255, 255, 0.14)" : "rgba(100, 116, 139, 0.22)";
       const pointColorNear = isDark ? "#38bdf8" : "#0284c7";
 
       for (let i = 0; i < gridPoints.length; i++) {
@@ -310,11 +308,11 @@ export function ReactiveGridBackground() {
 
         // Connect nearby points to form subtle high-tech grid matrix near cursor
         if (isNearPointer && dist < pointer.radius * 0.5) {
-          const lineAlpha = (1 - dist / (pointer.radius * 0.5)) * 0.22;
+          const lineAlpha = (1 - dist / (pointer.radius * 0.5)) * (isDark ? 0.25 : 0.38);
           ctx.strokeStyle = isDark
             ? `rgba(56, 189, 248, ${lineAlpha})`
             : `rgba(2, 132, 199, ${lineAlpha})`;
-          ctx.lineWidth = 0.75;
+          ctx.lineWidth = 0.85;
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p.x + (p.originX - p.x) * 0.5, p.y + (p.originY - p.y) * 0.5);
@@ -407,9 +405,9 @@ export function ReactiveGridBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       {/* Dynamic Animated Ambient Nebulae */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute top-1/3 -right-40 w-[30rem] h-[30rem] bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-3xl animate-pulse delay-1000" />
-      <div className="absolute -bottom-40 left-1/4 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/10 rounded-full blur-3xl" />
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/10 bg-cyan-500/15 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-1/3 -right-40 w-[30rem] h-[30rem] bg-indigo-500/10 bg-indigo-500/15 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute -bottom-40 left-1/4 w-96 h-96 bg-emerald-500/10 bg-emerald-500/10 rounded-full blur-3xl" />
 
       {/* High-Performance Reactive Canvas */}
       <canvas

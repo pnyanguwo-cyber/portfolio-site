@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { Menu, X, Sparkles, ArrowUpRight, ShieldCheck, Cpu, Code2, User, Home, Mail } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
@@ -63,8 +62,8 @@ export function Navigation() {
         className={cn(
           "sticky top-0 z-50 w-full transition-all duration-300",
           scrolled
-            ? "bg-white/80 dark:bg-zinc-950/85 backdrop-blur-xl border-b border-zinc-200/80 dark:border-zinc-800/80 shadow-sm"
-            : "bg-white/60 dark:bg-zinc-950/60 backdrop-blur-md border-b border-zinc-200/40 dark:border-zinc-800/40"
+            ? "bg-white/80 backdrop-blur-xl border-b border-zinc-200/80 shadow-sm"
+            : "bg-white/60 backdrop-blur-md border-b border-zinc-200/40"
         )}
       >
         <div className="container mx-auto px-4 sm:px-6">
@@ -83,10 +82,10 @@ export function Navigation() {
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="text-base font-bold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+                <span className="text-base font-bold tracking-tight text-zinc-900 group-hover:text-cyan-600 transition-colors">
                   Panashe Nyanguwo
                 </span>
-                <span className="text-[10px] font-mono tracking-wider uppercase text-zinc-500 dark:text-zinc-400 flex items-center gap-1">
+                <span className="text-[10px] font-mono tracking-wider uppercase text-zinc-500 flex items-center gap-1">
                   <span>Anti-Gravity</span>
                   <span className="text-cyan-500">•</span>
                   <span>AI & Security</span>
@@ -95,7 +94,7 @@ export function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 p-1 bg-zinc-100/70 dark:bg-zinc-900/60 rounded-full border border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-md">
+            <nav className="hidden lg:flex items-center space-x-1 p-1 bg-zinc-100/70 rounded-full border border-zinc-200/80 backdrop-blur-md">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
@@ -105,8 +104,8 @@ export function Navigation() {
                     className={cn(
                       "px-3.5 py-1.5 text-xs font-medium rounded-full transition-all duration-200",
                       isActive
-                        ? "bg-white dark:bg-zinc-800 text-cyan-600 dark:text-cyan-400 shadow-sm border border-zinc-200/50 dark:border-zinc-700/50"
-                        : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-white/50 dark:hover:bg-zinc-800/50"
+                        ? "bg-white text-cyan-600 shadow-sm border border-zinc-200/50"
+                        : "text-zinc-600 hover:text-zinc-900 hover:bg-white/50"
                     )}
                   >
                     {item.name}
@@ -115,12 +114,12 @@ export function Navigation() {
               })}
             </nav>
 
-            {/* Actions: Theme Toggle, Pulse, GitHub, Mobile Menu */}
+            {/* Actions: Pulse, GitHub, Mobile Menu */}
             <div className="flex items-center space-x-2 sm:space-x-3">
               {/* Anti-Gravity Pulse Button (Desktop) */}
               <button
                 onClick={triggerAntiGravityPulse}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all hover:scale-105 active:scale-95"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-full bg-cyan-500/10 text-cyan-600 border border-cyan-500/20 hover:bg-cyan-500/20 transition-all hover:scale-105 active:scale-95"
                 title="Pulse the Reactive Grid"
               >
                 <Sparkles className="w-3.5 h-3.5 text-cyan-500 animate-spin-slow" />
@@ -132,20 +131,17 @@ export function Navigation() {
                 href="https://github.com/pnyanguwo-cyber"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                className="p-2 rounded-full text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
                 aria-label="GitHub Profile"
               >
                 <GithubIcon className="h-4 w-4" />
               </a>
 
-              {/* Theme Toggle */}
-              <ThemeProvider />
-
               {/* Mobile Hamburger Toggle Button */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="lg:hidden p-2 rounded-lg text-zinc-700 hover:bg-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 aria-expanded={mobileMenuOpen}
                 aria-label="Toggle navigation menu"
               >
@@ -166,10 +162,10 @@ export function Navigation() {
           />
 
           {/* Drawer Panel */}
-          <div className="relative z-50 flex flex-col w-full bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 pt-20 pb-8 px-6 shadow-2xl animate-in slide-in-from-top-6 duration-200 max-h-[90vh] overflow-y-auto">
+          <div className="relative z-50 flex flex-col w-full bg-white border-b border-zinc-200 pt-20 pb-8 px-6 shadow-2xl animate-in slide-in-from-top-6 duration-200 max-h-[90vh] overflow-y-auto">
             {/* Live Operational Status */}
             <div className="mb-6 p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-between text-xs font-mono">
-              <div className="flex items-center gap-2 text-cyan-600 dark:text-cyan-400">
+              <div className="flex items-center gap-2 text-cyan-600">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -178,7 +174,7 @@ export function Navigation() {
               </div>
               <button
                 onClick={triggerAntiGravityPulse}
-                className="text-cyan-600 dark:text-cyan-300 font-semibold underline underline-offset-2 flex items-center gap-1"
+                className="text-cyan-600 font-semibold underline underline-offset-2 flex items-center gap-1"
               >
                 <Sparkles className="w-3 h-3" />
                 Pulse Grid
@@ -198,8 +194,8 @@ export function Navigation() {
                     className={cn(
                       "flex items-center justify-between px-4 py-3 text-base font-medium rounded-xl transition-colors",
                       isActive
-                        ? "bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-semibold"
-                        : "text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+                        ? "bg-cyan-500/15 text-cyan-600 border border-cyan-500/30 font-semibold"
+                        : "text-zinc-800 hover:bg-zinc-100"
                     )}
                   >
                     <div className="flex items-center gap-3">
@@ -213,7 +209,7 @@ export function Navigation() {
             </nav>
 
             {/* Mobile CTAs */}
-            <div className="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-col gap-3">
+            <div className="mt-6 pt-6 border-t border-zinc-200 flex flex-col gap-3">
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -224,7 +220,7 @@ export function Navigation() {
               <a
                 href="/panashe-nyanguwo-cv.pdf"
                 download
-                className="w-full py-3 px-4 rounded-xl text-center font-medium text-zinc-800 dark:text-zinc-200 bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-sm border border-zinc-200 dark:border-zinc-800"
+                className="w-full py-3 px-4 rounded-xl text-center font-medium text-zinc-800 bg-zinc-100 hover:bg-zinc-200 text-sm border border-zinc-200"
               >
                 Download Resume / CV
               </a>

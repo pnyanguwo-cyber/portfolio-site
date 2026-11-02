@@ -46,14 +46,14 @@ export default function ProjectsPage() {
       <main className="flex-1 py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 mb-4 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-500/10 text-cyan-600 text-cyan-400 border border-cyan-500/20 mb-4 backdrop-blur-md">
               <Code2 className="w-3.5 h-3.5" />
               <span>PRODUCTION SYSTEMS</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 dark:text-zinc-50 tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-zinc-900 text-zinc-50 tracking-tight mb-6">
               Engineering & Digital Products
             </h1>
-            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-zinc-600 text-zinc-300 max-w-2xl mx-auto">
               Selected production applications and systems built with a security-aware mindset, anti-gravity autonomy, and modern cloud technologies.
             </p>
           </div>
